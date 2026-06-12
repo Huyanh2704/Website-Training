@@ -3,212 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trung tâm Huấn luyện Kỹ năng HSB - Giao diện Video Tràn Viền</title>
+    <title>Trung tâm huấn luyện An ninh phi truyền thống - HSB</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-slate-950 text-gray-100 font-sans antialiased">
+<body class="bg-[#F4F9F3] text-gray-900 font-sans antialiased">
 
-    <!-- ==========================================
-         PHẦN 1: VIDEO CHIẾM TOÀN BỘ CHIỀU NGANG PHÍA TRÊN (HERO VIDEO)
-         ========================================== -->
-    <section class="relative w-full h-[65vh] md:h-[75vh] flex flex-col justify-between overflow-hidden bg-black">
-        
-        <!-- Gợi ý: Thay link ảnh bằng thẻ <video autoplay muted loop> khi thầy có file video thực tế -->
-        <div class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-35 scale-105"></div>
-        
-        <!-- Lớp phủ tạo hiệu ứng mờ tối phía trên và phía dưới để làm nổi bật chữ -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-slate-950"></div>
-
-        <!-- HEADER TRONG SUỐT NẰM TRÊN VIDEO -->
-        <header class="relative z-10 w-full bg-gradient-to-b from-black/50 to-transparent">
-            <div class="max-w-[1400px] mx-auto px-6 py-4 flex justify-between items-center">
-                <!-- Logo & Tên trường -->
-                <div class="flex items-center space-x-4">
-                    <div class="bg-white p-1.5 rounded text-[#003830] font-black text-xl tracking-tighter shadow-md">HSB</div>
-                    <div class="border-l border-white/30 pl-4">
-                        <h1 class="text-sm md:text-base font-bold tracking-wider uppercase text-white">Trung Tâm Huấn Luyện Kỹ Năng</h1>
-                        <p class="text-[11px] text-teal-300 font-medium">HANOI SCHOOL OF BUSINESS & MANAGEMENT - VNU</p>
-                    </div>
+    <div class="bg-[#2D5A27] text-white border-b border-[#3D7A35] py-5 px-6 shadow-md">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+            <div class="flex items-center space-x-4">
+                <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center">
+                    <img id="logo-hsb" src="C:\Users\Huy Anh\Downloads\WEBSITE TRUNG TAM HUAN LUYEN ANPTT\anhwebsite\logoqs.png" alt="Logo HSB" class="h-16 w-auto object-contain">
                 </div>
-                <!-- Menu nhanh -->
-                <nav class="hidden lg:flex space-x-6 text-sm font-medium text-gray-200">
-                    <a href="#" class="text-[#d4af37]">Trang Chủ</a>
-                    <a href="#phu-chi-tiet" class="hover:text-white transition">Nội Dung Chi Tiết</a>
-                    <a href="#phu-giang-vien" class="hover:text-white transition">Đội Ngũ Huấn Luyện</a>
-                    <a href="#phu-footer" class="hover:text-white transition">Liên Hệ</a>
-                </nav>
-                <div class="flex items-center space-x-4">
-                    <a href="tel:090" class="bg-[#8b1c1c] hover:bg-[#a12323] text-white text-xs font-bold px-4 py-2 rounded transition uppercase tracking-wider shadow-lg">
-                        <i class="fa-solid fa-phone mr-1"></i> Hotline
-                    </a>
+                <div>
+                    <h1 class="text-sm md:text-base font-bold text-gray-200 tracking-wide uppercase">Trường Quản trị và Kinh doanh – Đại Học Quốc Gia Hà Nội</h1>
+                    <h2 class="text-base md:text-lg font-black text-white tracking-normal uppercase mt-0.5">Viện An ninh phi truyền thống</h2>
+                    <h3 class="text-lg md:text-2xl font-extrabold tracking-tight text-[#E2F0D9] uppercase mt-0.5">Trung tâm huấn luyện An ninh phi truyền thống</h3>
                 </div>
             </div>
-        </header>
-
-        <!-- CHỮ GIỮA MÀN HÌNH VIDEO (SLOGAN CHÍNH) -->
-        <div class="relative z-10 text-center px-4 max-w-3xl mx-auto my-auto">
-            <span class="text-[#d4af37] text-xs font-bold tracking-widest uppercase bg-teal-950/60 border border-yellow-600/30 px-3 py-1 rounded-full"><i class="fa-solid fa-circle-play text-red-500 mr-1.5 animate-pulse"></i> Khu vực Video hoạt động Trung tâm</span>
-            <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mt-3 mb-2 drop-shadow-lg">Rèn Bản Lĩnh - Luyện Ý Chí</h2>
-            <p class="text-sm md:text-base text-gray-300 font-medium italic drop-shadow">"Hành trang sinh tồn thực tế và Nghệ thuật chiến đấu kiên cường tại HSB"</p>
-        </div>
-        
-        <!-- Khoảng đệm chân video -->
-        <div class="relative z-10 w-full pb-4 text-center">
-            <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">Thông tin chính nằm ngay bên dưới <i class="fa-solid fa-arrow-down ml-1 text-[#d4af37] animate-bounce"></i></span>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         PHẦN 2: 4 TRƯỜNG THÔNG TIN CHÍNH XẾP HÀNG NGANG (DƯỚI VIDEO)
-         ========================================== -->
-    <section class="relative z-20 max-w-[1400px] mx-auto px-6 -mt-8 md:-mt-12">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            
-            <!-- Ô 1: Giới thiệu -->
-            <a href="#phu-chi-tiet" class="bg-[#003830] p-5 rounded-xl border border-teal-900 shadow-2xl flex flex-col justify-between hover:border-[#d4af37]/60 hover:-translate-y-1 transition duration-300 group">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-teal-950 flex items-center justify-center text-[#d4af37] mb-3 group-hover:bg-[#d4af37] group-hover:text-slate-950 transition"><i class="fa-solid fa-university"></i></div>
-                    <h3 class="text-xs font-bold uppercase text-white tracking-wide group-hover:text-[#d4af37]">Giới Thiệu Chung</h3>
-                    <p class="text-[11px] text-gray-400 mt-2 leading-relaxed line-clamp-3">Vị trí địa lý, không gian huấn luyện mô phỏng đạt chuẩn ĐHQGHN tại Hòa Lạc và Văn phòng cơ cấu phòng ban.</p>
-                </div>
-                <span class="text-[10px] text-teal-400 font-semibold uppercase flex items-center mt-4">Xem chi tiết <i class="fa-solid fa-chevron-down ml-1"></i></span>
-            </a>
-
-            <!-- Ô 2: Chương trình đào tạo -->
-            <a href="#phu-chi-tiet" class="bg-[#003830] p-5 rounded-xl border border-teal-900 shadow-2xl flex flex-col justify-between hover:border-[#d4af37]/60 hover:-translate-y-1 transition duration-300 group">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-teal-950 flex items-center justify-center text-[#d4af37] mb-3 group-hover:bg-[#d4af37] group-hover:text-slate-950 transition"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 class="text-xs font-bold uppercase text-white tracking-wide group-hover:text-[#d4af37]">Chương Trình Đào Tạo</h3>
-                    <div class="mt-2 space-y-1">
-                        <div class="text-[11px] text-gray-300 flex items-center"><i class="fa-solid fa-angles-right text-[8px] text-yellow-500 mr-1.5"></i> Môn: Kỹ năng Sinh tồn</div>
-                        <div class="text-[11px] text-gray-300 flex items-center"><i class="fa-solid fa-angles-right text-[8px] text-yellow-500 mr-1.5"></i> Môn: Nghệ thuật Chiến đấu</div>
-                    </div>
-                </div>
-                <span class="text-[10px] text-teal-400 font-semibold uppercase flex items-center mt-4">Xem tư liệu <i class="fa-solid fa-chevron-down ml-1"></i></span>
-            </a>
-
-            <!-- Ô 3: Trại hè huấn luyện -->
-            <a href="#phu-chi-tiet" class="bg-[#003830] p-5 rounded-xl border border-teal-900 shadow-2xl flex flex-col justify-between hover:border-[#d4af37]/60 hover:-translate-y-1 transition duration-300 group">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-teal-950 flex items-center justify-center text-[#d4af37] mb-3 group-hover:bg-[#d4af37] group-hover:text-slate-950 transition"><i class="fa-solid fa-campground"></i></div>
-                    <h3 class="text-xs font-bold uppercase text-white tracking-wide group-hover:text-[#d4af37]">Trại Hè Kỹ Năng</h3>
-                    <p class="text-[11px] text-gray-400 mt-2 leading-relaxed line-clamp-3">Đăng tải Brochure tài liệu giới thiệu chương trình, hình ảnh dã ngoại thực tế của học viên các khóa trước.</p>
-                </div>
-                <span class="text-[10px] text-teal-400 font-semibold uppercase flex items-center mt-4">Tải Brochure PDF <i class="fa-solid fa-download ml-1"></i></span>
-            </a>
-
-            <!-- Ô 4: Tin tức -->
-            <a href="#phu-chi-tiet" class="bg-[#003830] p-5 rounded-xl border border-teal-900 shadow-2xl flex flex-col justify-between hover:border-[#d4af37]/60 hover:-translate-y-1 transition duration-300 group">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-teal-950 flex items-center justify-center text-[#d4af37] mb-3 group-hover:bg-[#d4af37] group-hover:text-slate-950 transition"><i class="fa-solid fa-newspaper"></i></div>
-                    <h3 class="text-xs font-bold uppercase text-white tracking-wide group-hover:text-[#d4af37]">Tin Tức - Hoạt Động</h3>
-                    <p class="text-[11px] text-gray-300 mt-2 line-clamp-2">• Khai mạc khóa huấn luyện tân binh...</p>
-                </div>
-                <span class="text-[10px] text-teal-400 font-semibold uppercase flex items-center mt-4">Xem bản tin <i class="fa-solid fa-chevron-down ml-1"></i></span>
-            </a>
-
-         </div>
-    </section>
-
-
-    <!-- ==========================================
-         PHẦN 3: NỘI DUNG PHỤ CHI TIẾT (KÉO XUỐNG DƯỚI ĐỂ XEM)
-         ========================================== -->
-    <div id="phu-chi-tiet" class="bg-slate-950 text-gray-300 mt-16">
-        
-        <!-- KHỐI VĂN BẢN CHI TIẾT ĐỂ ĐÓN TEXT ĐANG HOÀN THIỆN -->
-        <section class="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <!-- Đọc nội dung Giới thiệu & Đào tạo -->
-            <div class="lg:col-span-2 space-y-10">
-                <div>
-                    <h4 class="text-base font-bold uppercase text-[#d4af37] border-b border-teal-900 pb-1.5 mb-3"><i class="fa-solid fa-map-location-dot mr-2"></i>Vị trí, nhiệm vụ & Không gian</h4>
-                    <p class="text-xs leading-relaxed text-gray-400">
-                        [Vị trí bổ sung văn bản chi tiết: Khi hoàn thiện xong text, thầy điền nội dung lý thuyết dài về chức năng nhiệm vụ, thiết bị mô phỏng bãi tập, phòng học lý thuyết chuyên sâu tại đây...].
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-base font-bold uppercase text-[#d4af37] border-b border-teal-900 pb-1.5 mb-3"><i class="fa-solid fa-book-bookmark mr-2"></i>Chi tiết 2 Môn học bắt buộc của Sinh viên năm 2</h4>
-                    <div class="grid sm:grid-cols-2 gap-4 text-xs">
-                        <div class="bg-[#00211b] p-4 rounded border border-teal-950">
-                            <h5 class="font-bold text-white mb-1.5 text-teal-400">Môn: Kỹ năng Sinh tồn</h5>
-                            <p class="text-gray-400">Cách tạo lửa từ vật dụng tự nhiên, lọc nước sạch sơ cấp, định vị và tạo điểm trú ẩn an toàn khi lạc trong rừng dã ngoại.</p>
-                        </div>
-                        <div class="bg-[#00211b] p-4 rounded border border-teal-950">
-                            <h5 class="font-bold text-white mb-1.5 text-teal-400">Môn: Nghệ thuật Chiến đấu</h5>
-                            <p class="text-gray-400">Bộ môn võ thuật thực chiến, xử lý tình huống phản xạ tự vệ khẩn cấp, chiến thuật bảo vệ đồng đội phối hợp nhóm.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="bg-[#3D7A35] text-white px-6 py-3 rounded-xl shadow-inner border border-[#44883E] font-black text-base tracking-wider flex items-center space-x-2.5">
+                <i class="fa-solid fa-phone-volume text-[#E2F0D9] animate-pulse"></i>
+                <span class="text-xs font-medium text-gray-200 uppercase">Hotline:</span>
+                <span class="text-[#E2F0D9]">0859.234.666</span>
             </div>
-
-            <!-- Khối tải Brochure & Thư viện ảnh trại hè có sẵn -->
-            <div class="bg-[#0b1311] p-5 rounded-xl border border-gray-900 space-y-5 h-fit text-xs">
-                <div>
-                    <h4 class="font-bold uppercase text-white mb-2">Tài liệu Trại Hè Sinh Tồn</h4>
-                    <p class="text-gray-400 mb-3">Tải văn bản thông tin chi tiết về các hoạt động kỷ luật dã ngoại, lịch trình và danh mục chuẩn bị quân nhu.</p>
-                    <button class="w-full bg-[#8b1c1c] text-white font-bold py-2 rounded hover:bg-red-800 transition"><i class="fa-solid fa-file-pdf mr-1"></i> Tải Brochure (.PDF)</button>
-                </div>
-                <hr class="border-gray-800">
-                <div>
-                    <h4 class="font-bold uppercase text-white mb-2">Hình ảnh hoạt động sẵn có</h4>
-                    <div class="grid grid-cols-3 gap-2 text-center text-[10px] text-gray-600">
-                        <div class="aspect-square bg-teal-950/50 rounded flex items-center justify-center">Tư liệu 1</div>
-                        <div class="aspect-square bg-teal-950/50 rounded flex items-center justify-center">Tư liệu 2</div>
-                        <div class="aspect-square bg-teal-950/50 rounded flex items-center justify-center">Tư liệu 3</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- KHỐI ĐỘI NGŨ THAM GIA HUẤN LUYỆN (GIẢNG VIÊN) -->
-        <section id="phu-giang-vien" class="bg-[#001310] py-12 border-t border-b border-teal-950 text-xs">
-            <div class="max-w-[1200px] mx-auto px-6">
-                <h4 class="text-base font-bold uppercase text-[#d4af37] mb-6 text-center">Cơ Cấu Nhân Sự & Đội Ngũ Huấn Luyện</h4>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div class="p-3 bg-slate-900/40 rounded border border-teal-950/40">
-                        <div class="w-12 h-12 bg-teal-900 rounded-full mx-auto mb-2 flex items-center justify-center text-gray-500"><i class="fa-solid fa-user-tie text-base"></i></div>
-                        <h5 class="font-bold text-white">Ban Giám Đốc</h5>
-                    </div>
-                    <div class="p-3 bg-slate-900/40 rounded border border-teal-950/40">
-                        <div class="w-12 h-12 bg-teal-900 rounded-full mx-auto mb-2 flex items-center justify-center text-gray-500"><i class="fa-solid fa-user-shield text-base"></i></div>
-                        <h5 class="font-bold text-white">Giảng viên / Sĩ quan</h5>
-                    </div>
-                    <div class="p-3 bg-slate-900/40 rounded border border-teal-950/40">
-                        <div class="w-12 h-12 bg-teal-900 rounded-full mx-auto mb-2 flex items-center justify-center text-gray-500"><i class="fa-solid fa-user-check text-base"></i></div>
-                        <h5 class="font-bold text-white">Huấn luyện viên dã ngoại</h5>
-                    </div>
-                    <div class="p-3 bg-slate-900/40 rounded border border-teal-950/40">
-                        <div class="w-12 h-12 bg-teal-900 rounded-full mx-auto mb-2 flex items-center justify-center text-gray-500"><i class="fa-solid fa-users text-base"></i></div>
-                        <h5 class="font-bold text-white">Đội ngũ Trợ giảng</h5>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHÂN TRANG ĐẦY ĐỦ THÔNG TIN ĐỊA CHỈ TRỤ SỞ VÀ VĂN PHÒNG CHÍNH -->
-        <footer id="phu-footer" class="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-xs border-b border-gray-900">
-            <div>
-                <h5 class="text-white font-bold uppercase mb-3">Trung Tâm Huấn Luyện HSB</h5>
-                <p class="text-gray-400 leading-relaxed">Đơn vị chuyên trách phát triển thể chất, bản lĩnh và tư duy an ninh toàn diện thuộc Khoa Quản trị và Kinh doanh - Đại học Quốc gia Hà Nội.</p>
-            </div>
-            <div class="space-y-2">
-                <h5 class="text-white font-bold uppercase mb-3">Văn Phòng & Cơ Sở</h5>
-                <p><i class="fa-solid fa-location-dot text-[#d4af37] w-5"></i> <strong>Trụ sở chính:</strong> Khu huấn luyện biệt lập Hòa Lạc, ĐHQGHN.</p>
-                <p><i class="fa-solid fa-building text-[#d4af37] w-5"></i> <strong>VP Hà Nội:</strong> Nhà B1, số 144 Xuân Thủy, Cầu Giấy, Hà Nội.</p>
-            </div>
-            <div>
-                <h5 class="text-white font-bold uppercase mb-3">Kết Nối</h5>
-                <p class="text-gray-400 mb-2">Mọi thắc mắc về lịch học và tài liệu liên hệ hotline hoặc hòm thư nhà trường.</p>
-                <p class="text-white"><i class="fa-solid fa-envelope text-teal-400 mr-1.5"></i> trungtamkynang@hsb.edu.vn</p>
-            </div>
-        </footer>
-
-        <!-- DÒNG BẢN QUYỀN CUỐI CÙNG -->
-        <div class="py-4 text-center text-[11px] text-gray-600 bg-black/20">
-            &copy; 2026 HSB Skills Center. Đồng bộ bản sắc Hanoi School of Business & Management.
         </div>
     </div>
 
+    <nav class="sticky top-0 z-50 bg-[#1E3D1A] text-white shadow-md border-b border-[#2D5A27]">
+        <div class="max-w-[1400px] mx-auto px-6 flex justify-between items-center h-14">
+            <div class="flex flex-wrap gap-x-1 md:gap-x-4 text-xs md:text-sm font-bold uppercase tracking-wider">
+                <a href="#" class="px-3 py-4 hover:bg-[#2D5A27] text-[#E2F0D9] transition flex items-center"><i class="fa-solid fa-house mr-1.5"></i>TRANG CHỦ</a>
+                <a href="#khu-vuc-dao-tao" class="px-3 py-4 hover:bg-[#2D5A27] hover:text-[#E2F0D9] transition flex items-center"><i class="fa-solid fa-graduation-cap mr-1.5"></i>CHƯƠNG TRÌNH ĐÀO TẠO</a>
+                <a href="#khu-vuc-trai-he" class="px-3 py-4 hover:bg-[#2D5A27] hover:text-[#E2F0D9] transition flex items-center"><i class="fa-solid fa-campground mr-1.5"></i>TRẠI HÈ HUẤN LUYỆN KỸ NĂNG SINH TỒN</a>
+            </div>
+            <div class="hidden sm:flex items-center text-[#E2F0D9] font-black text-xs md:text-sm tracking-wider bg-[#2D5A27] px-4 py-1.5 rounded-full border border-[#3D7A35]">
+                <i class="fa-solid fa-headset mr-2"></i>HOTLINE
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative w-full h-[35vh] md:h-[40vh] bg-[#2D5A27] overflow-hidden">
+        <div class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-25"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1E3D1A]/30 via-transparent to-[#F4F9F3]"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto h-full flex flex-col justify-center items-center text-white space-y-3">
+            <span class="text-[#E2F0D9] text-xs font-bold tracking-widest uppercase bg-[#2D5A27]/90 border border-[#3D7A35] px-4 py-1.5 rounded-full shadow-sm">
+                <i class="fa-solid fa-circle-play text-red-500 mr-2 animate-pulse"></i> KHU VỰC VIDEO HOẠT ĐỘNG TRUNG TÂM
+            </span>
+            <h2 class="text-2xl md:text-4xl font-black uppercase tracking-tight drop-shadow-md text-white">RÈN BẢN LĨNH - LUYỆN Ý CHÍ</h2>
+            <p class="text-xs md:text-sm text-gray-100 font-medium italic drop-shadow-sm">"Hành trang sinh tồn thực tế và Nghệ thuật chiến đấu kiên cường tại HSB"</p>
+        </div>
+    </section>
+
+    <section class="max-w-[1400px] mx-auto px-6 -mt-10 relative z-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-[#2D5A27] text-white p-5 rounded-xl border border-[#3D7A35] shadow-xl flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                <div>
+                    <div class="w-8 h-8 rounded-lg bg-[#1E3D1A] flex items-center justify-center text-[#E2F0D9] mb-3"><i class="fa-solid fa-university"></i></div>
+                    <h4 class="text-sm font-bold uppercase tracking-wide text-[#E2F0D9]">Giới Thiệu Chung</h4>
+                    <p class="text-[11px] text-gray-200 mt-2 leading-relaxed">Tổng quan về đơn vị đào tạo, không gian sinh thái Bavieco và định hướng chiến lược.</p>
+                </div>
+                <a href="#khu-vuc-gioi-thieu" class="text-[11px] text-[#E2F0D9] font-bold uppercase flex items-center mt-4 hover:underline">Xem chi tiết <i class="fa-solid fa-chevron-down ml-1"></i></a>
+            </div>
+            <div class="bg-[#2D5A27] text-white p-5 rounded-xl border border-[#3D7A35] shadow-xl flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                <div>
+                    <div class="w-8 h-8 rounded-lg bg-[#1E3D1A] flex items-center justify-center text-[#E2F0D9] mb-3"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 class="text-sm font-bold uppercase tracking-wide text-[#E2F0D9]">Chương Trình Đào Tạo</h4>
+                    <p class="text-[11px] text-gray-200 mt-2 leading-relaxed">Chi tiết các môn học bắt buộc: Học phần Kỹ năng sinh tồn và Học phần Kỹ năng chiến đấu.</p>
+                </div>
+                <a href="#khu-vuc-dao-tao" class="text-[11px] text-[#E2F0D9] font-bold uppercase flex items-center mt-4 hover:underline">Xem Chương Trình <i class="fa-solid fa-chevron-down ml-1"></i></a>
+            </div>
+            <div class="bg-[#2D5A27] text-white p-5 rounded-xl border border-[#3D7A35] shadow-xl flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                <div>
+                    <div class="w-8 h-8 rounded-lg bg-[#1E3D1A] flex items-center justify-center text-[#E2F0D9] mb-3"><i class="fa-solid fa-campground"></i></div>
+                    <h4 class="text-sm font-bold uppercase tracking-wide text-[#E2F0D9]">Trại hè kỹ năng</h4>
+                    <p class="text-[11px] text-gray-200 mt-2 leading-relaxed">Trại hè huấn luyện kỹ năng sinh tồn, lịch trình trải nghiệm thực tế quân đội dã ngoại.</p>
+                </div>
+                <a href="#khu-vuc-trai-he" class="text-[11px] text-[#E2F0D9] font-bold uppercase flex items-center mt-4 hover:underline">Xem trại hè <i class="fa-solid fa-chevron-down ml-1"></i></a>
+            </div>
+            <div class="bg-[#2D5A27] text-white p-5 rounded-xl border border-[#3D7A35] shadow-xl flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                <div>
+                    <div class="w-8 h-8 rounded-lg bg-[#1E3D1A] flex items-center justify-center text-[#E2F0D9] mb-3"><i class="fa-solid fa-newspaper"></i></div>
+                    <h4 class="text-sm font-bold uppercase tracking-wide text-[#E2F0D9]">Tin tức</h4>
+                    <p class="text-[11px] text-gray-200 mt-2 leading-relaxed">Cập nhật liên tục thông tin hoạt động, thông báo và các chuỗi trải nghiệm thực tế của sinh viên.</p>
+                </div>
+                <a href="#khu-vuc-tin-tuc" class="text-[11px] text-[#E2F0D9] font-bold uppercase flex items-center mt-4 hover:underline">Xem bản tin <i class="fa-solid fa-chevron-down ml-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-[1400px] mx-auto px-6 py-12 space-y-10">
+
+        <section id="khu-vuc-gioi-thieu" class="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm space-y-6">
+            <h4 class="text-lg font-bold uppercase text-[#2D5A27] border-b-2 border-[#2D5A27] pb-2">
+                <i class="fa-solid fa-university mr-2"></i>GIỚI THIỆU VỀ TRUNG TÂM HUẤN LUYỆN AN NINH PHI TRUYỀN THỐNG
+            </h4>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <div class="lg:col-span-1 text-xs md:text-sm text-black leading-relaxed space-y-4 text-justify">
+                    <p>
+                        Trường Quản trị và Kinh doanh (HSB), Đại học Quốc gia Hà Nội, là đơn vị giáo dục đại học công lập tiên phong trong tự chủ đại học, có nhiều sáng tạo đột phá trong đào tạo, nghiên cứu và tư vấn chiến lược liên ngành, đã được Tổ chức QS xếp hạng là trường có chất lượng quốc tế 5 sao. Viện An ninh phi truyền thống và MNS-Think Tank trực thuộc trường là một đơn vị đặc biệt chuyên sâu trong nghiên cứu, đào tạo, chuyển giao tri thức khoa học – công nghệ và tư vấn chính sách cho lãnh đạo Đảng, Nhà nước, các bộ ngành, địa phương, tổ chức… về quản trị, an ninh, an ninh phi truyền thống and phát triển bền vững.
+                    </p>
+                    <p>
+                        Trong bối cảnh các rủi ro, nguy cơ, thách thức an ninh phi truyền thống ngày càng gia tăng, đan xen and tác động trực tiếp đến hoạt động của các cơ quan nhà nước, địa phương, tổ chức, doanh nghiệp and các cộng đồng thì nhu cầu đào tạo, huấn luyện, diễn tập and nâng cao năng lực ứng phó thực tiễn trở nên hết sức cấp thiết. Đặc biệt, các nội dung như kỹ năng sinh tồn, sơ cấp cứu, phòng cháy chữa cháy, cứu nạn cứu hộ, ứng phó thiên tai, bảo vệ mục tiêu, điều khiển thiết bị bay không người lái, an toàn thông tin, an ninh mạng and xử lý tình huống khẩn cấp cần được tổ chức theo mô hình huấn luyện thực hành, mô phỏng and diễn tập liên ngành.
+                    </p>
+                    <p>
+                        Từ yêu cầu thực tiễn đó, được sự hỗ trợ của HSB and các đối tác chiến lược, Viện An ninh phi truyền thống đang xây dựng Trung tâm Huấn luyện đa năng với tổng diện tích hơn 10.000 m² (trong không gian sinh thái núi rừng rộng khoảng 100 ha được sử dụng chung của Bavieco), bao gồm các khu chức năng phục vụ huấn luyện thể chất, kỹ năng sinh tồn, thể thao ứng dụng, vượt chướng ngại vật, diễn tập đội nhóm and rèn luyện năng lực ứng phó với các tình huống an ninh phi truyền thống trong thực tiễn.
+                    </p>
+                    <p>
+                        Trung tâm được định hướng trở thành không gian huấn luyện thực hành, diễn tập tổng hợp and đào tạo kỹ năng ứng phó với các tình huống an ninh phi truyền thống cho học sinh, sinh viên, học viên, nhân viên doanh nghiệp, lực lượng bảo vệ chuyên trách, lực lượng cơ sở and các đối tượng có nhu cầu. Đây cũng là mô hình phục vụ nghiên cứu khoa học ứng dụng, thử nghiệm chương trình đào tạo, tổ chức các hoạt động ngoại khóa, huấn luyện kỹ năng sống, kỹ năng sinh tồn, kỹ năng chiến đấu, đào tạo về quản trị rủi ro and nâng cao năng lực thích ứng trước các tình huống khẩn cấp xảy ra.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm space-y-3">
+                        <div class="text-[11px] bg-[#2D5A27] text-[#E2F0D9] px-3 py-1.5 font-bold uppercase tracking-wide flex justify-between items-center rounded">
+                            <span><i class="fa-solid fa-images mr-1.5"></i> Hình ảnh phối cảnh & Flycam Bavieco</span>
+                            <span class="text-[10px] bg-[#1E3D1A] px-2 py-0.5 rounded text-white animate-pulse"><i class="fa-solid fa-pointer mr-1"></i> Click vào ảnh để đổi ảnh</span>
+                        </div>
+                        
+                        <div class="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-transparent cursor-pointer relative group select-none flex items-center justify-center" onclick="nextGalleryImage('bavieco')">
+                            <img id="bavieco-img" src="" alt="Phối cảnh Bavieco" class="w-full h-auto object-contain max-w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm space-y-4">
+            <h4 class="text-sm font-bold uppercase text-[#2D5A27] tracking-wider border-l-4 border-[#2D5A27] pl-3">
+                <i class="fa-solid fa-video mr-1.5"></i> Video sinh viên học thực tế tại Bộ tư lệnh cảnh sát cơ động
+            </h4>
+            <div class="aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden bg-gray-900 border border-gray-200 shadow-inner relative">
+                <iframe class="w-full h-full border-0" 
+                    src="https://www.youtube.com/embed/SlQR9iu09bQ?autoplay=1&mute=1&loop=1&playlist=SlQR9iu09bQ" 
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section id="khu-vuc-dao-tao" class="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm space-y-6">
+            <h4 class="text-lg font-bold uppercase text-[#2D5A27] border-b-2 border-[#2D5A27] pb-2 mb-4">
+                <i class="fa-solid fa-shield-halved mr-2"></i>CHƯƠNG TRÌNH ĐÀO TẠO ĐẶC THÙ
+            </h4>
+
+            <div class="bg-[#F8FAF7] p-5 rounded-xl border border-gray-200 text-xs md:text-sm text-black space-y-4 text-justify shadow-sm">
+                <h5 class="font-black text-[#2D5A27] uppercase text-sm md:text-base border-l-4 border-[#2D5A27] pl-3 mb-2">
+                    Hai học phần đặc thù tại HSB: Rèn luyện kỹ năng sinh tồn và nghệ thuật chiến đấu cho công dân thời đại mới
+                </h5>
+                
+                <div class="w-full max-w-2xl mx-auto my-3 rounded-lg overflow-hidden border border-gray-200 shadow-sm cursor-pointer relative flex items-center justify-center group select-none bg-transparent" onclick="nextGalleryImage('daotao')">
+                    <img id="daotao-img" src="" alt="Sinh viên học thực tế tại HSB" class="w-full h-auto object-contain max-w-full">
+                    <div class="absolute top-3 left-3 bg-[#2D5A27] text-white text-[10px] font-bold px-2 py-1 rounded shadow-md opacity-90 group-hover:opacity-100 transition">
+                        <i class="fa-solid fa-pointer mr-1"></i> Click để đổi ảnh
+                    </div>
+                </div>
+
+                <p>
+                    In bối cảnh thế giới đang đối mặt với many thách thức an ninh phi truyền thống như thiên tai, dịch bệnh, tai nạn, khủng hoảng xã hội and các tình huống khẩn cấp khó lường, việc trang bị cho thế hệ trẻ năng lực thích ứng, tự bảo vệ bản thân and xử lý rủi ro ngày càng trở thành yêu cầu cấp thiết. Với triết lý đào tạo gắn kiến thức với thực tiễn, Trường Quản trị and Kinh doanh (HSB), Đại học Quốc gia Hà Nội đã xây dựng and triển khai hai học phần đặc thù: “Kỹ năng sinh tồn” (HSB3128) and “Nghệ thuật chiến đấu” (HSB3127), góp phần hình thành những công dân có bản lĩnh, trách nhiệm and năng lực ứng phó trước các thách thức của thời đại.
+                </p>
+                <p>
+                    Đây là hai học phần mang tính thực hành cao, được thiết kế theo định hướng đào tạo nguồn nhân lực quản trị an ninh phi truyền thống, kết hợp chặt chẽ giữa lý luận and trải nghiệm thực tiễn. Không chỉ giúp sinh viên nâng cao thể lực and kỹ năng tự vệ, chương trình còn trang bị các năng lực cần thiết để nhận diện nguy cơ, xử lý tình huống rủi ro cao, ứng phó với các kịch bản bất ngờ một cách chủ động and khoa học.
+                </p>
+                <p>
+                    Việc tổ chức đào tạo hai học phần đặc thù này được HSB giao cho Viện An ninh phi truyền thống (INS) chủ trì thực hiện. Với đội ngũ giảng viên, chuyên gia giàu kinh nghiệm cùng mạng lưới hợp tác chặt chẽ với các đơn vị nghiệp vụ như Bộ Tư lệnh Cảnh sát cơ động, Học viện Cảnh sát nhân dân, Trường Cao đẳng Cảnh sát nhân dân and many cơ quan chuyên môn khác, INS bảo đảm chất lượng đào tạo, tính thực tiễn and an toàn trong suốt quá trình tổ chức giảng dạy.
+                </p>
+                <p>
+                    Trong chiến lược đào tạo nguồn nhân lực chất lượng cao của HSB, tri thức chuyên môn luôn cần song hành với năng lực thích ứng and khả năng hành động trong thực tiễn. Hai học phần “Kỹ năng sinh tồn” and “Nghệ thuật chiến đấu” không chỉ giúp sinh viên học cách bảo vệ bản thân mà còn rèn luyện tư duy ứng phó, tinh thần đồng đội, ý chí vượt khó and bản lĩnh trước những biến động của cuộc sống. Đây chính là những phẩm chất quan trọng của nguồn nhân lực thế hệ mới – những nhà quản trị không chỉ giỏi chuyên môn mà còn có khả năng dẫn dắt, thích nghi and ứng phó hiệu quả với các thách thức an ninh phi truyền thống trong tương lai.
+                </p>
+            </div>
+
+            <hr class="border-gray-200 my-6">
+
+            <div class="flex border-b border-gray-200 mb-4 text-xs md:text-sm font-bold">
+                <button onclick="toggleTab('tab-sinh-ton')" id="btn-sinh-ton" class="py-2.5 px-4 border-b-2 border-[#2D5A27] text-[#2D5A27] bg-[#F4F9F3] rounded-t-lg transition flex items-center cursor-pointer">
+                    <i class="fa-solid fa-campground mr-2"></i>Học phần Kỹ năng sinh tồn (HSB3128)
+                </button>
+                <button onclick="toggleTab('tab-chien-dau')" id="btn-chien-dau" class="py-2.5 px-4 border-b-2 border-transparent text-gray-500 hover:text-[#2D5A27] transition flex items-center cursor-pointer">
+                    <i class="fa-solid fa-user-shield mr-2"></i>Học phần Nghệ thuật chiến đấu (HSB3127)
+                </button>
+            </div>
+
+            <div class="text-xs md:text-sm text-black leading-relaxed text-justify space-y-4">
+                
+                <div id="tab-sinh-ton" class="block space-y-4">
+                    <h5 class="font-extrabold text-[#2D5A27] text-sm md:text-base uppercase tracking-tight">
+                        HỌC PHẦN KỸ NĂNG SINH TỒN (HSB3128): TRANG BỊ NĂNG LỰC THÍCH ỨNG VÀ ỨNG PHÓ TRƯỚC MỌI TÌNH HUỐNG KHẨN CẤP
+                    </h5>
+                    
+                    <div class="w-full max-w-lg mx-auto rounded-lg overflow-hidden border border-gray-200 shadow-sm my-3 cursor-pointer relative flex items-center justify-center group select-none bg-transparent" onclick="nextGalleryImage('sinhton')">
+                        <img id="sinhton-img" src="" alt="Sinh viên học băng bó vết thương" class="w-full h-auto object-contain max-w-full">
+                        <div class="absolute top-3 left-3 bg-[#2D5A27] text-white text-[10px] font-bold px-2 py-1 rounded shadow-md opacity-90">
+                            <i class="fa-solid fa-pointer mr-1"></i> Click xem chuỗi ảnh hoạt động
+                        </div>
+                    </div>
+                    <p>
+                        Trong một thế giới ngày càng biến động bởi thiên tai, dịch bệnh, tai nạn, sự cố môi trường and các thách thức an ninh phi truyền thống, khả năng sinh tồn không còn là kỹ năng dành riêng cho những người hoạt động trong môi trường đặc biệt mà đã trở thành một năng lực thiết yếu của mỗi công dân hiện đại.
+                    </p>
+                    <p>
+                        Với định hướng đào tạo nguồn nhân lực có khả năng thích ứng cao trước những biến động của xã hội, Trường Quản trị and Kinh doanh (HSB), Đại học Quốc gia Hà Nội triển khai học phần “Kỹ năng sinh tồn” (HSB3128) như một nội dung đào tạo đặc thù, giúp sinh viên xây dựng tư duy ứng phó, khả năng tự bảo vệ and năng lực hành động hiệu quả trong các tình huống khẩn cấp.
+                    </p>
+                    <p>
+                        Khác với các học phần kỹ năng thông thường, Kỹ năng sinh tồn không chỉ cung cấp kiến thức mà còn đặt sinh viên vào những tình huống giả định gần với thực tế để rèn luyện khả năng quan sát, đánh giá nguy cơ and đưa ra quyết định trong điều kiện áp lực cao. Sinh viên được tiếp cận những nguyên tắc cốt lõi về tâm lý sinh tồn, học cách kiểm soát cảm xúc, duy trì sự bình tĩnh and xây dựng tư duy tích cực khi đối mặt với hiểm nguy.
+                    </p>
+                    <p>
+                        Nội dung học phần bao gồm many kỹ năng thiết thực như tìm kiếm and thiết lập nơi trú ẩn an toàn; nhận biết and khai thác nguồn nước, nguồn thực phẩm trong điều kiện hạn chế; kỹ thuật tạo lửa phục vụ sinh hoạt and cứu hộ; phương pháp xác định phương hướng bằng la bàn, bản đồ and các dấu hiệu tự nhiên khi bị lạc. Bên cạnh đó, sinh viên cũng được huấn luyện các kỹ năng ứng phó cụ thể với thảm họa như động đất, lũ lụt, hỏa hoạn nhà cao tầng, kỹ năng thoát hiểm and sử dụng các trang thiết bị bảo hộ, cứu sinh cơ bản. Các bài tập thực hành dã ngoại and diễn tập tình huống khẩn cấp giúp sinh viên củng cố bản lĩnh and rèn luyện kỹ năng trong môi trường gần với điều kiện thực tế. Qua đó, người học không chỉ tiếp thu kiến thức mà còn phát triển khả năng phối hợp, hỗ trợ lẫn nhau and nâng cao tinh thần trách nhiệm tập thể.
+                    </p>
+                    <p>
+                        Một nội dung đặc biệt quan trọng của học phần là chương trình thực hành sơ cấp cứu do các chuyên gia y tế trực tiếp hướng dẫn. Sinh viên được tiếp cận các kỹ thuật sơ cứu cơ bản nhưng có ý nghĩa sống còn như xử lý vết thương xây xát, cầm máu, băng bó, hỗ trợ người bị ngạt, choáng hoặc gặp các sự cố sức khỏe đột ngột. Các nội dung đều được thực hành trên hệ thống vật tư chuyên dụng, giúp sinh viên thành thạo kỹ năng and sẵn sàng ứng dụng khi cần thiết.
+                    </p>
+                    <p>
+                        Thông qua học phần Kỹ năng sinh tồn, sinh viên không chỉ học cách tồn tại trong những điều kiện khó khăn mà còn được rèn luyện khả năng thích ứng, tinh thần chủ động and ý thức trách nhiệm đối với bản thân and cộng đồng. Đây là những phẩm chất đặc biệt quan trọng đối với nguồn nhân lực thế hệ mới – những nhà quản trị không chỉ giỏi chuyên môn mà còn có khả năng ứng phó linh hoạt trước những thách thức ngày càng phức tạp của xã hội hiện đại.
+                    </p>
+                    <p>
+                        Học phần Kỹ năng sinh tồn là minh chứng cho triết lý giáo dục của HSB: đào tạo con người toàn diện, kết hợp giữa tri thức, kỹ năng and bản lĩnh. Trong hành trình trở thành những nhà quản trị tương lai, sinh viên HSB không chỉ được trang bị năng lực lãnh đạo and tư duy chiến lược, mà còn sở hữu khả năng thích ứng and hành động hiệu quả trong mọi hoàn cảnh – những năng lực cốt lõi của công dân toàn cầu.
+                    </p>
+                </div>
+
+                <div id="tab-chien-dau" class="hidden space-y-4">
+                    <h5 class="font-extrabold text-[#2D5A27] text-sm md:text-base uppercase tracking-tight">
+                        HỌC PHẦN NGHỆ THUẬT CHIẾN ĐẤU (HSB3127): RÈN LUYỆN BẢN LĨNH, NÂNG CAO NĂNG LỰC TỰ VỆ TRONG THỜI ĐẠI MỚI
+                    </h5>
+                    
+                    <div class="w-full max-w-lg mx-auto rounded-lg overflow-hidden border border-gray-200 shadow-sm my-3 cursor-pointer relative flex items-center justify-center group select-none bg-transparent" onclick="nextGalleryImage('chiendau')">
+                        <img id="chiendau-img" src="" alt="Sinh viên học thực tế tại Bộ tư lệnh cảnh sát cơ động" class="w-full h-auto object-contain max-w-full">
+                        <div class="absolute top-3 left-3 bg-[#2D5A27] text-white text-[10px] font-bold px-2 py-1 rounded shadow-md opacity-90">
+                            <i class="fa-solid fa-pointer mr-1"></i> Click xem chuỗi ảnh võ thuật dã ngoại
+                        </div>
+                    </div>
+                    <p>
+                        Trong bối cảnh các thách thức an ninh phi truyền thống ngày càng đa dạng and phức tạp, năng lực tự bảo vệ bản thân, xử lý tình huống nguy hiểm and duy trì sự bình tĩnh trước các rủi ro bất ngờ đã trở thành những kỹ năng quan trọng đối với mỗi cá nhân. Với định hướng đào tạo nguồn nhân lực có năng lực thích ứng cao, Trường Quản trị and Kinh doanh (HSB), Đại học Quốc gia Hà Nội đã đưa học phần “Nghệ thuật chiến đấu” (HSB3127) vào chương trình đào tạo như một học phần kỹ năng đặc thù, góp phần phát triển toàn diện thể chất, bản lĩnh and năng lực ứng phó thực tiễn cho sinh viên.
+                    </p>
+                    <p>
+                        Khác với quan niệm thông thường về võ thuật chỉ nhằm mục đích rèn luyện thể lực, học phần Nghệ thuật chiến đấu được xây dựng trên cơ sở khoa học của quản trị rủi ro and an ninh cá nhân, giúp sinh viên hiểu rõ nguyên tắc tự vệ, kỹ năng bảo đảm an toàn cho bản thân and khả năng phản ứng phù hợp trong những tình huống khẩn cấp.
+                    </p>
+                    <p>
+                        Nội dung học phần được thiết kế theo hướng thực hành chuyên sâu, bao gồm các kỹ thuật tấn công cơ bản như thế đứng, di chuyển, đòn tay, đòn chân; các kỹ thuật phòng ngự như gạt đỡ, tránh né, kỹ thuật ngã an toàn; and đặc biệt là các thế khóa gỡ, thoát hiểm khi bị khống chế bất ngờ. Sinh viên cũng được học cách nhận biết, đánh giá môi trường xung quanh để tìm ra lối thoát an toàn, tận dụng các vật dụng thông thường làm công cụ tự vệ hợp pháp khi đối mặt với hành vi xâm hại. Bên cạnh các kỹ thuật cá nhân, học phần còn chú trọng huấn luyện chiến thuật phối hợp đồng đội trong việc bảo vệ mục tiêu, di chuyển đội hình an toàn and hỗ trợ người xung quanh thoát khỏi vùng nguy hiểm. Quá trình tập luyện đòi hỏi sự tập trung cao độ, tính kỷ luật nghiêm túc, từ đó giúp sinh viên rèn luyện tinh thần kiên cường, sự điềm tĩnh and ý thức trách nhiệm trong tập thể.
+                    </p>
+                    <p>
+                        Một điểm nhấn đặc biệt của học phần là hoạt động học tập thực tế tại các đơn vị huấn luyện thuộc Bộ Công an and Bộ Quốc phòng. Tại đây, sinh viên được tìm hiểu chức năng, nhiệm vụ của các lực lượng chuyên trách trong lĩnh vực bảo đảm an ninh, quốc phòng; tham quan hệ thống trang thiết bị hiện đại, khu vực huấn luyện chuyên dụng; đồng thời trực tiếp quan sát các màn trình diễn nghiệp vụ, võ thuật and chiến thuật đặc nhiệm chuyên nghiệp, ấn tượng. Những trải nghiệm thực tế này giúp sinh viên có cái nhìn sinh động về môi trường công tác của các lực lượng thực thi nhiệm vụ bảo vệ an ninh quốc gia, từ đó hiểu rõ hơn giá trị của tinh thần kỷ luật, bản lĩnh and trách nhiệm đối với cộng đồng.
+                    </p>
+                    <p>
+                        Học phần Nghệ thuật chiến đấu không hướng đến việc đào tạo những võ sĩ chuyên nghiệp, mà tập trung hình thành ở sinh viên năng lực tự vệ, khả năng kiểm soát bản thân and tinh thần sẵn sàng ứng phó trước các tình huống bất ngờ trong cuộc sống. Đây là một trong những năng lực nền tảng của công dân thời đại số, đặc biệt đối với những nhà quản trị tương lai phải làm việc trong môi trường many biến động and rủi ro.
+                    </p>
+                    <p>
+                        Thông qua học phần này, HSB tiếp tục khẳng định triết lý đào tạo gắn tri thức với hành động, gắn giảng đường với thực tiễn and gắn năng lực chuyên môn với trách nhiệm xã hội. Bởi trong thế giới hiện đại, thành công không chỉ đến từ kiến thức, mà còn được tạo nên bởi bản lĩnh, khả năng thích ứng and năng lực bảo vệ chính mình trước những thách thức không ngừng thay đổi của thời đại.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="khu-vuc-trai-he" class="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm space-y-6">
+            <h4 class="text-lg font-bold uppercase text-[#2D5A27] border-b-2 border-[#2D5A27] pb-2 mb-2">
+                <i class="fa-solid fa-campground mr-2"></i>TRẠI HÈ HUẤN LUYỆN KỸ NĂNG SINH TỒN 2026
+            </h4>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <div class="lg:col-span-2 text-xs md:text-sm text-black space-y-4 text-justify">
+                    <h5 class="font-black text-[#2D5A27] uppercase text-sm md:text-base leading-snug">
+                        MÙA HÈ TRƯỞNG THÀNH GIỮA THIÊN NHIÊN – TRẠI HÈ HUẤN LUYỆN KỸ NĂNG SINH TỒN 2026
+                    </h5>
+                    <p>
+                        Mùa hè không chỉ là khoảng thời gian nghỉ ngơi sau một năm học tập mà còn là cơ hội để các em khám phá bản thân, rèn luyện kỹ năng sống and trưởng thành qua những trải nghiệm thực tế.
+                    </p>
+                    <p>
+                        Giữa không gian thiên nhiên rộng gần 100 ha với núi, rừng, suối, ao hồ and vườn dược liệu tại Tổ hợp Bavieco, Trung tâm Huấn luyện An ninh Phi truyền thống (thuộc Viện An ninh phi truyền thống, Trường Quản trị and Kinh doanh HSB) tổ chức Trại hè Huấn luyện Kỹ năng Sinh tồn 2026 dành cho các em học sinh từ 6 đến 15 tuổi.
+                    </p>
+                    <p>
+                        Tại đây, các em được học tập, vui chơi and rèn luyện trong môi trường an toàn, gần gũi với thiên nhiên, thông qua chương trình được thiết kế khoa học với 4 nhóm kỹ năng thiết yếu:
+                    </p>
+                    <div class="space-y-3 pl-2 my-3">
+                        <div class="flex items-start space-x-2.5">
+                            <span class="text-lg mt-0.5">🏃‍♂️</span>
+                            <p><strong>Rèn luyện thể chất</strong> qua các môn thể thao như bơi lội, võ thuật…</p>
+                        </div>
+                        <div class="flex items-start space-x-2.5">
+                            <span class="text-lg mt-0.5">🚨</span>
+                            <p><strong>Trang bị kỹ năng phòng ngừa rủi ro</strong> như thoát hiểm khi cháy nổ, ứng phó thiên tai, xử lý tình huống bị lạc, sơ cứu and băng bó vết thương.</p>
+                        </div>
+                        <div class="flex items-start space-x-2.5">
+                            <span class="text-lg mt-0.5">🎒</span>
+                            <p><strong>Rèn luyện tính tự lập</strong> thông qua các hoạt động sinh hoạt tập thể, tự chăm sóc bản thân and nâng cao tinh thần trách nhiệm.</p>
+                        </div>
+                        <div class="flex items-start space-x-2.5">
+                            <span class="text-lg mt-0.5">🧘‍♂️</span>
+                            <p><strong>Học cách Quản lý cảm xúc</strong> với các hoạt động thiền định tại Quy Sơn Thiền Đường, giúp các em học cách bình tĩnh, tự tin, biết yêu thương and trân trọng những giá trị tốt đẹp trong cuộc sống.</p>
+                        </div>
+                    </div>
+                    <p>
+                        Mỗi ngày tại trại hè là một hành trình khám phá mới, nơi các em được vận động, trải nghiệm, học hỏi and trưởng thành. Không chỉ mang đến những kỷ niệm đẹp, chương trình còn giúp các em xây dựng bản lĩnh, tính kỷ luật and khả năng thích ứng trước những tình huống thực tế.
+                    </p>
+                    
+                    <div class="bg-[#F4F9F3] p-4 rounded-xl border border-[#2D5A27]/20 space-y-2 mt-4 text-xs md:text-sm">
+                        <p class="font-bold text-[#2D5A27] flex items-center uppercase tracking-wide">
+                            <i class="fa-solid fa-location-dot mr-2 text-red-600"></i> Địa điểm tổ chức
+                        </p>
+                        <ul class="list-none space-y-1.5 pl-1">
+                            <li class="flex items-center"><span class="mr-2">⛺</span> Trung tâm Huấn luyện An ninh Phi truyền thống</li>
+                            <li class="flex items-center"><span class="mr-2">🌿</span> Tổ hợp Bavieco – Nghỉ dưỡng, Dưỡng lão and Chữa bệnh theo Đông y</li>
+                            <li class="flex items-center"><span class="mr-2">📍</span> Thôn Rùa, xã Yên Bài, TP Hà Nội</li>
+                            <li class="flex items-center font-bold text-[#2D5A27]"><span class="mr-2">☎️</span> Hotline đăng ký: 0859.234.666</li>
+                        </ul>
+                    </div>
+
+                    <p class="font-bold italic text-[#2D5A27] text-center mt-3 text-xs md:text-sm">
+                        ✨ Trao cho con một mùa hè đáng nhớ – trao cho con hành trang vững vàng để trưởng thành!
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-[#F8FAF7] p-5 rounded-xl border border-gray-200 shadow-sm space-y-3">
+                        <div class="text-[11px] font-bold text-gray-700 uppercase tracking-wide flex items-center">
+                            <i class="fa-solid fa-file-pdf text-red-600 mr-2 text-sm"></i> Tài liệu dính kèm
+                        </div>
+                        <a href="https://drive.google.com/uc?export=download&id=1La2Q4QgA7zKK8_1KphNbAiGNKrmiIpww" download="Brochure_Trai_He_Sinh_Ton_2026.pdf" class="w-full bg-[#2D5A27] text-white text-center font-bold py-2.5 rounded-lg text-xs hover:bg-[#1E3D1A] transition shadow block uppercase tracking-wider">
+                            <i class="fa-solid fa-file-arrow-down mr-1.5"></i> Tải Brochure giới thiệu Trại Hè (PDF)
+                        </a>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 shadow-sm space-y-2">
+                        <p class="font-bold text-[#2D5A27] text-[11px] uppercase tracking-wider">Một số hoạt động tại trại hè</p>
+                        <div class="bg-transparent rounded overflow-hidden cursor-pointer relative flex items-center justify-center group select-none" onclick="nextGalleryImage('traihe')">
+                            <img id="traihe-img" src="" alt="Hoạt động trại hè" class="w-full h-auto object-contain max-w-full">
+                            <div class="absolute top-2 left-2 bg-[#2D5A27] text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow">
+                                <i class="fa-solid fa-pointer mr-1"></i> Click xem album
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="khu-vuc-tin-tuc" class="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm space-y-8">
+            <h4 class="text-lg font-bold uppercase text-[#2D5A27] border-b-2 border-[#2D5A27] pb-2">
+                <i class="fa-solid fa-newspaper mr-2"></i>TIN TỨC HOẠT ĐỘNG
+            </h4>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                
+                <article class="space-y-4 text-black text-xs md:text-sm text-justify">
+                    <div class="bg-transparent rounded-lg overflow-hidden border border-gray-200 shadow-inner cursor-pointer relative flex items-center justify-center group select-none" onclick="nextGalleryImage('tintuc1')">
+                        <img id="tintuc1-img" src="" alt="Sinh viên" class="w-full h-auto object-contain max-w-full">
+                        <div class="absolute top-3 left-3 bg-[#2D5A27] text-white text-[10px] font-bold px-2 py-1 rounded shadow">
+                            <i class="fa-solid fa-pointer mr-1"></i> Xem ảnh thực tế
+                        </div>
+                    </div>
+                    <h5 class="font-black text-[#2D5A27] uppercase text-sm md:text-base leading-snug tracking-tight">
+                        SINH VIÊN HSB HỌC TỪ THỰC TIỄN: TRẢI NGHIỆM MÔI TRƯỜNG AN NINH – QUỐC PHÒNG VÀ RÈN LUYỆN KỸ NĂNG SINH TỒN
+                    </h5>
+                    <p>
+                        Vừa qua, sinh viên Trường Quản trị and Kinh doanh (HSB), Đại học Quốc gia Hà Nội đã được tham gia chuỗi học phần trang bị kỹ năng cơ bản về “Kỹ năng sinh tồn and kỹ năng chiến đấu” do các sĩ quan quân đội trực tiếp hướng dẫn tại HSB với many nội dung thiết thực như: kỹ năng tìm phương hướng khi bị lạc, kỹ năng nhóm lửa, sơ cứu – băng bó vết thương, kỹ năng sử dụng các dụng cụ xung quanh để sơ cứu cầm máu, hô hấp nhân tạo and xử lý tình huống trong điều kiện khẩn cấp.
+                    </p>
+                    <p>
+                        Thông qua mô hình đào tạo gắn lý thuyết với trải nghiệm thực tiễn, HSB không chỉ trang bị cho sinh viên kiến thức chuyên môn mà còn chú trọng rèn luyện năng lực thích ứng, kỹ năng sinh tồn, tinh thần đồng đội and bản lĩnh cá nhân – những yếu tố quan trọng của nguồn nhân lực chất lượng cao trong thời đại mới.
+                    </p>
+                    <p>
+                        Trong khuôn khổ chương trình, Đoàn cán bộ and sinh viên Trường Quản trị and Kinh doanh (HSB) đã phối hợp cùng Viện An ninh phi truyền thống (INS) tham quan, học tập thực tế tại Bộ Tư lệnh Cảnh sát cơ động. Đoàn đã trực tiếp tham quan Đoàn Cảnh sát đặc nhiệm số 1; xem phim truyền thống tái hiện hành trình 52 năm xây dựng, chiến đấu and trưởng thành của lực lượng Cảnh sát cơ động Việt Nam; đồng thời tìm hiểu hệ thống vũ khí, trang thiết bị đặc chủng hiện đại and theo dõi các màn biểu diễn võ thuật, khí công, chiến thuật đặc nhiệm chuyên nghiệp, ấn tượng.
+                    </p>
+                    <p>
+                        Không chỉ là một chuyến tham quan thực tế, chương trình còn mang đến cho sinh viên HSB những trải nghiệm sống động về tinh thần kỷ luật, bản lĩnh, trách nhiệm and ý chí của người chiến sĩ Công an nhân dân. Qua đó góp phần bồi đắp lòng yêu nước, niềm tự hào dân tộc and nâng cao nhận thức của sinh viên về vai trò của an ninh – quốc phòng trong bối cảnh hiện đại.
+                    </p>
+                </article>
+
+                <article class="space-y-4 text-black text-xs md:text-sm text-justify">
+                    <div class="bg-transparent rounded-lg overflow-hidden border border-gray-200 shadow-inner cursor-pointer relative flex items-center justify-center group select-none" onclick="nextGalleryImage('tintuc2')">
+                        <img id="tintuc2-img" src="" alt="Trại hè nhí" class="w-full h-auto object-contain max-w-full">
+                        <div class="absolute top-3 left-3 bg-[#2D5A27] text-white text-[10px] font-bold px-2 py-1 rounded shadow">
+                            <i class="fa-solid fa-pointer mr-1"></i> Xem hình ảnh
+                        </div>
+                    </div>
+                    <h5 class="font-black text-[#2D5A27] uppercase text-sm md:text-base leading-snug tracking-tight">
+                        CHÀO ĐÓN CÁC CHIẾN BINH NHÍ ĐẾN VỚI TRẠI HÈ HUẤN LUYỆN KỸ NĂNG SINH TỒN 2026
+                    </h5>
+                    <p>
+                        Nằm trong khu vực sinh thái núi - rừng - suối - ao hồ - cây ăn quả - cây dược liệu gần 100 ha của Tổ hợp Bavieco - Nghỉ dưỡng, Dưỡng lão and Chữa bệnh theo Đông y, Trung tâm Huấn luyện An ninh phi truyền thống (thuộc Viện An ninh phi truyền thống, trường Quản trị and Kinh doanh (HSB) chính thức chào đón các em tham gia Trại hè Huấn luyện Kỹ năng Sinh tồn 2026 dành cho học sinh từ 6 đến 15 tuổi! 
+                    </p>
+                    <p>
+                        Giữa những cánh rừng xanh, vườn dược liệu and không gian thiên nhiên trong lành, các em sẽ được học tập and trải nghiệm trong một môi trường an toàn, gần gũi với thiên nhiên, nơi mỗi ngày hè đều trở thành một bài học quý giá về việc rèn luyện thể chất, kỹ năng sống and đức tính kỷ luật. 
+                    </p>
+                    <p>
+                        Chúc các em có một mùa hè thật ý nghĩa, trưởng thành trong yêu thương and biết ơn!
+                    </p>
+                </article>
+                
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-[#1E3D1A] text-gray-300 text-xs py-10 border-t-4 border-[#2D5A27]">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-2">
+                <h5 class="font-black text-white text-sm uppercase tracking-wide border-b border-[#3D7A35] pb-1.5">Đơn vị quản lý</h5>
+                <p class="font-bold text-[#E2F0D9] text-sm">Trung tâm Huấn luyện An ninh phi truyền thống</p>
+                <p class="font-semibold text-gray-200">Viện An ninh phi truyền thống</p>
+                <p class="text-gray-400">Trường Quản trị and Kinh doanh (HSB) – ĐH Quốc gia Hà Nội</p>
+            </div>
+            <div class="space-y-2">
+                <h5 class="font-black text-white text-sm uppercase tracking-wide border-b border-[#3D7A35] pb-1.5">Địa chỉ hoạt động</h5>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="font-bold text-[#E2F0D9]"><i class="fa-solid fa-map-location-dot mr-1.5"></i> Trụ sở chính:</span> 
+                    Tại Tổ hợp Bavieco, Thôn Muồng Voi, xã Yên Bài, Hà Nội
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    <span class="font-bold text-[#E2F0D9]"><i class="fa-solid fa-building-user mr-1.5"></i> Văn phòng tại HSB:</span> 
+                    Nhà B1, số 144 Xuân Thủy, Hà Nội
+                </p>
+            </div>
+            <div class="space-y-2">
+                <h5 class="font-black text-white text-sm uppercase tracking-wide border-b border-[#3D7A35] pb-1.5">Thông tin liên hệ</h5>
+                <div class="bg-[#2D5A27]/40 p-3 rounded-lg border border-[#3D7A35] inline-block w-full">
+                    <p class="text-xs text-gray-300 uppercase tracking-wider font-semibold">Đăng ký khóa học & Trại hè:</p>
+                    <p class="text-lg font-black text-[#E2F0D9] flex items-center mt-1">
+                        <i class="fa-solid fa-phone animate-pulse mr-2 text-yellow-400"></i> HotLine: 0859.234.666
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1400px] mx-auto px-6 mt-8 pt-4 border-t border-[#2D5A27] text-center text-gray-500 text-[11px]">
+            &copy; 2026 Trung tâm huấn luyện An ninh phi truyền thống - HSB. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const galleries = {
+            bavieco: [
+                String.raw`C:\Users\Huy Anh\Downloads\WEBSITE TRUNG TAM HUAN LUYEN ANPTT\FLYCAM - Phong\bavieco1.jpg`,
+                String.raw`C:\Users\Huy Anh\Downloads\WEBSITE TRUNG TAM HUAN LUYEN ANPTT\FLYCAM - Phong\bavieco2.jpg`,
+                String.raw`C:\Users\Huy Anh\Downloads\WEBSITE TRUNG TAM HUAN LUYEN ANPTT\FLYCAM - Phong\bavieco3.jpg`,
+                String.raw`C:\Users\Huy Anh\Downloads\WEBSITE TRUNG TAM HUAN LUYEN ANPTT\FLYCAM - Phong\bavieco4.jpg`,
+		String.raw`C:\Users\Huy Anh\Downloads\WEBSITE TRUNG TAM HUAN LUYEN ANPTT\anhwebsite\bavieco\bavieco1.jpg`
+            ],
+            daotao: [
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinh_vien_thuc_te_tong.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/anh_tong_2.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/anh_tong_3.jpg`
+            ],
+            sinhton: [
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinh_vien_bang_bo_vet_thuong.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_2.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_3.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_4.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_5.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_6.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_7.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_8.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_9.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_10.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_11.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_12.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_13.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_14.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_15.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_16.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_17.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinhton_18.jpg`
+            ],
+            chiendau: [
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/sinh_vien_hoc_thuc_te_bo_tu_lenh.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_2.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_3.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_4.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_5.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_6.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_7.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_8.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_9.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_10.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_11.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN & NGHỆ THUẬT CHIẾN ĐẤU/chiendau_12.jpg`
+            ],
+            traihe: [
+                String.raw`images/trai_he_1.jpg`, String.raw`images/trai_he_2.jpg`, String.raw`images/trai_he_3.jpg`,
+                String.raw`images/trai_he_4.jpg`, String.raw`images/trai_he_5.jpg`, String.raw`images/trai_he_6.jpg`,
+                String.raw`images/trai_he_7.jpg`, String.raw`images/trai_he_8.jpg`, String.raw`images/trai_he_9.jpg`,
+                String.raw`images/trai_he_10.jpg`, String.raw`images/trai_he_11.jpg`, String.raw`images/trai_he_12.jpg`,
+                String.raw`images/trai_he_13.jpg`, String.raw`images/trai_he_14.jpg`, String.raw`images/trai_he_15.jpg`,
+                String.raw`images/trai_he_16.jpg`, String.raw`images/trai_he_17.jpg`, String.raw`images/trai_he_18.jpg`,
+                String.raw`images/trai_he_19.jpg`, String.raw`images/trai_he_20.jpg`, String.raw`images/trai_he_21.jpg`,
+                String.raw`images/trai_he_22.jpg`, String.raw`images/trai_he_23.jpg`
+            ],
+            tintuc1: [
+                String.raw`KỸ NĂNG SINH TỒN VÀ KỸ NĂNG CHIẾN ĐẤU/tin_tuc_hsb.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN VÀ KỸ NĂNG CHIẾN ĐẤU/tin_tuc_hsb_2.jpg`,
+                String.raw`KỸ NĂNG SINH TỒN VÀ KỸ NĂNG CHIẾN ĐẤU/tin_tuc_hsb_3.jpg`
+            ],
+            tintuc2: [
+                String.raw`images/tin_tuc_trai_he_nhi.jpg`,
+                String.raw`images/tin_tuc_trai_he_nhi_2.jpg`,
+                String.raw`images/tin_tuc_trai_he_nhi_3.jpg`
+            ]
+        };
+
+        const galleryIndexes = { bavieco: 0, daotao: 0, sinhton: 0, chiendau: 0, traihe: 0, tintuc1: 0, tintuc2: 0 };
+
+        function nextGalleryImage(key) {
+            const list = galleries[key];
+            if (!list || list.length <= 1) return;
+
+            galleryIndexes[key] = (galleryIndexes[key] + 1) % list.length;
+            document.getElementById(`${key}-img`).src = list[galleryIndexes[key]];
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            Object.keys(galleries).forEach(key => {
+                if (galleries[key].length > 0) {
+                    const imgEl = document.getElementById(`${key}-img`);
+                    if (imgEl) imgEl.src = galleries[key][0];
+                }
+            });
+        });
+
+        function toggleTab(tabId) {
+            document.getElementById('tab-sinh-ton').classList.add('hidden');
+            document.getElementById('tab-chien-dau').classList.add('hidden');
+            
+            document.getElementById('btn-sinh-ton').className = "py-2.5 px-4 border-b-2 border-transparent text-gray-500 hover:text-[#2D5A27] transition flex items-center cursor-pointer font-bold";
+            document.getElementById('btn-chien-dau').className = "py-2.5 px-4 border-b-2 border-transparent text-gray-500 hover:text-[#2D5A27] transition flex items-center cursor-pointer font-bold";
+            
+            document.getElementById(tabId).classList.remove('hidden');
+            if(tabId === 'tab-sinh-ton') {
+                document.getElementById('btn-sinh-ton').className = "py-2.5 px-4 border-b-2 border-[#2D5A27] text-[#2D5A27] bg-[#F4F9F3] rounded-t-lg transition flex items-center cursor-pointer font-bold";
+            } else {
+                document.getElementById('btn-chien-dau').className = "py-2.5 px-4 border-b-2 border-[#2D5A27] text-[#2D5A27] bg-[#F4F9F3] rounded-t-lg transition flex items-center cursor-pointer font-bold";
+            }
+        }
+    </script>
 </body>
 </html>
