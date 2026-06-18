@@ -9,6 +9,7 @@
 </head>
 <body class="bg-[#F4F9F3] text-gray-900 font-sans antialiased">
 
+    <!-- BREADCRUMB / KHU VỰC ĐIỀU HƯỚNG QUAY LẠI -->
     <div class="bg-[#1E3D1A] text-white py-3 px-6 shadow-sm sticky top-0 z-50">
         <div class="max-w-[1000px] mx-auto flex justify-between items-center text-xs md:text-sm">
             <a href="index.html" class="hover:text-[#E2F0D9] font-bold transition flex items-center gap-2">
@@ -18,8 +19,10 @@
         </div>
     </div>
 
+    <!-- MAIN CONTENT ARTICLE -->
     <main class="max-w-[1000px] mx-auto bg-white my-8 p-6 md:p-12 rounded-2xl border border-gray-200 shadow-sm space-y-8">
         
+        <!-- TIÊU ĐỀ BÀI VIẾT -->
         <div class="space-y-3 border-b-2 border-gray-100 pb-4">
             <span class="text-xs font-bold uppercase text-[#2D5A27] bg-green-50 px-3 py-1 rounded-full border border-green-200">Chương trình trải nghiệm biệt lập 2026</span>
             <h1 class="text-xl md:text-3xl font-black text-[#2D5A27] uppercase tracking-tight leading-tight pt-1">
@@ -27,10 +30,38 @@
             </h1>
         </div>
 
-        <div class="rounded-xl overflow-hidden aspect-[21/9] bg-gray-100 shadow-sm border border-gray-200">
-            <img src="anhwebsite/traihe_banner.jpg" alt="Banner Trại hè huấn luyện kỹ năng sinh tồn 2026" class="w-full h-full object-cover">
+        <!-- KHUNG SLIDE ĐỘNG TỰ CO GIÃN THEO SIZE ẢNH (THAY THẾ BANNER CŨ) -->
+        <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 space-y-2">
+            <div class="rounded-lg overflow-hidden relative bg-gray-900 group shadow-inner transition-all duration-500 min-h-[200px] flex items-center justify-center">
+                
+                <!-- Ảnh tự co giãn chiều cao theo tỷ lệ thực tế, giới hạn tối đa 600px để tránh quá dài -->
+                <img id="slider-image" src="anhwebsite/traihe_banner.jpg" alt="Hình ảnh trại hè" class="w-full h-auto max-h-[600px] object-contain transition-all duration-500 block mx-auto">
+                
+                <!-- Lớp mờ đen hỗ trợ đọc text trên ảnh -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                
+                <!-- Nút bấm chuyển ảnh Lùi/Tiến -->
+                <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#2D5A27] text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 z-10">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#2D5A27] text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 z-10">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Chú thích ảnh hiển thị động -->
+                <div class="absolute bottom-3 left-4 right-4 text-white text-xs md:text-sm font-semibold drop-shadow z-10" id="slider-caption">
+                    Banner Trại hè huấn luyện kỹ năng sinh tồn 2026
+                </div>
+            </div>
+            
+            <!-- Bộ đếm slide và hướng dẫn -->
+            <div class="flex justify-between items-center text-[11px] text-gray-500 px-1 font-medium">
+                <span><i class="fa-solid fa-images mr-1"></i> Không gian và hoạt động huấn luyện thực tế</span>
+                <span class="bg-gray-200 text-gray-700 px-2 py-0.5 rounded-full" id="slider-counter">Slide 1 / 1</span>
+            </div>
         </div>
 
+        <!-- NỘI DUNG VĂN BẢN -->
         <div class="space-y-4 text-sm md:text-base text-gray-800 leading-relaxed text-justify">
             <p class="font-medium text-gray-600 italic">
                 Mùa hè không chỉ là khoảng thời gian nghỉ ngơi sau một năm học tập mà còn là cơ hội để các em khám phá bản thân, rèn luyện kỹ năng sống và trưởng thành qua những trải nghiệm thực tế.
@@ -43,6 +74,7 @@
             </p>
         </div>
 
+        <!-- KHỐI 4 KHU VỰC KỸ NĂNG -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             
             <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition">
@@ -103,6 +135,7 @@
 
         </div>
 
+        <!-- KHỐI TỔNG KẾT NHẤN MẠNH -->
         <div class="bg-green-50 p-6 border-l-4 border-[#2D5A27] rounded-r-xl space-y-2 text-justify">
             <p class="text-sm md:text-base font-semibold text-gray-900">
                 Mỗi ngày tại trại hè huấn luyện là một hành trình khám phá mới, nơi các em được liên tục vận động, thực hành trải nghiệm trực quan, học hỏi chủ động để từng bước tự tin trưởng thành. 
@@ -112,6 +145,7 @@
             </p>
         </div>
 
+        <!-- ĐỊA ĐIỂM TỔ CHỨC -->
         <div class="border-t border-gray-200 pt-6 space-y-4">
             <h4 class="text-base md:text-lg font-black text-[#2D5A27] uppercase tracking-wide flex items-center gap-2">
                 <i class="fa-solid fa-map-location-dot"></i> ĐỊA ĐIỂM TỔ CHỨC CHÍNH THỨC
@@ -131,10 +165,74 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer class="bg-[#1E3D1A] text-gray-400 text-xs py-6 text-center border-t border-gray-200">
         <p class="font-bold text-[#E2F0D9] mb-1">Trung tâm Huấn luyện An ninh phi truyền thống - HSB</p>
         <p>© 2026 Toàn bộ bản quyền nội dung thuộc về Viện An ninh phi truyền thống</p>
     </footer>
 
+    <!-- SCRIPT ĐIỀU KHỦN SLIDE TỰ ĐỘNG CHẠY & THÊM ẢNH TÙY Ý -->
+    <script>
+        // THÊM HOẶC BỚT ẢNH CỦA BẠN TẠI ĐÂY
+        const slideData = [
+            {
+                src: "anhwebsite/traihe_banner.jpg",
+                caption: "Banner Trại hè huấn luyện kỹ năng sinh tồn 2026"
+            },
+            {
+                src: "anhwebsite-resize/traihe16.webp",
+                caption: "Hoạt động dã ngoại thực tế của các chiến binh nhí tại Ba Vì"
+            },
+            {
+                src: "anhwebsite-resize/traihe2.webp",
+                caption: "Rèn luyện nề nếp tính tự lập, kỷ luật theo mô hình quân ngũ"
+            }
+            // Điền thêm ảnh theo cú pháp: , { src: "link_anh", caption: "chu_thich" }
+        ];
+
+        let currentIndex = 0;
+        let slideInterval;
+
+        function updateSlide() {
+            const imgElement = document.getElementById('slider-image');
+            const captionElement = document.getElementById('slider-caption');
+            const counterElement = document.getElementById('slider-counter');
+
+            imgElement.style.opacity = 0.3;
+            
+            setTimeout(() => {
+                imgElement.src = slideData[currentIndex].src;
+                captionElement.innerText = slideData[currentIndex].caption;
+                counterElement.innerText = `Slide ${currentIndex + 1} / ${slideData.length}`;
+                imgElement.style.opacity = 1;
+            }, 200);
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slideData.length;
+            updateSlide();
+            resetInterval();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slideData.length) % slideData.length;
+            updateSlide();
+            resetInterval();
+        }
+
+        function startInterval() {
+            slideInterval = setInterval(nextSlide, 5000); // 5 giây tự chuyển ảnh 1 lần
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateSlide();
+            startInterval();
+        });
+    </script>
 </body>
 </html>
