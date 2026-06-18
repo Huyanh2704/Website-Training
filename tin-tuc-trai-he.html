@@ -129,8 +129,16 @@
             
             setTimeout(() => {
                 imgElement.src = slideData[currentIndex].src;
-                captionElement.innerText = slideData[currentIndex].caption;
                 counterElement.innerText = `Slide ${currentIndex + 1} / ${slideData.length}`;
+        
+                // KIỂM TRA: Nếu có caption và caption không trống thì mới hiển thị
+                if (slideData[currentIndex].caption) {
+                    captionElement.innerText = slideData[currentIndex].caption;
+                    captionElement.style.display = "block"; // Hiện thanh chú thích
+                } else {
+                    captionElement.style.display = "none";  // Ẩn thanh chú thích đi khi không có chữ
+                }
+        
                 imgElement.style.opacity = 1;
             }, 200);
         }
