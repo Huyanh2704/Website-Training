@@ -27,27 +27,28 @@
             GIỚI THIỆU VỀ TRUNG TÂM HUẤN LUYỆN AN NINH PHI TRUYỀN THỐNG
         </h1>
 
-        <!-- SLIDE TRÌNH CHIẾU ẢNH (FLYCAM & THIẾT KẾ TOÀN CẢNH) -->
+        <!-- SLIDE TRÌNH CHIẾU ẢNH (TỰ CO GIÃN THEO SIZE ẢNH) -->
         <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 space-y-2">
-            <div class="rounded-lg overflow-hidden relative aspect-[16/9] bg-gray-900 group shadow-inner">
+            <!-- Đã loại bỏ class ép tỷ lệ cứng cố định, khung sẽ tự co giãn mượt mà -->
+            <div class="rounded-lg overflow-hidden relative bg-gray-900 group shadow-inner transition-all duration-500 min-h-[200px] flex items-center justify-center">
                 
-                <!-- Các ảnh trong slide (Hãy sửa lại đường dẫn ảnh cho đúng tên file trong máy của bạn) -->
-                <img id="slider-image" src="anhwebsite/flycam_bavieco1.jpg" alt="Toàn cảnh Bavieco từ Flycam" class="w-full h-full object-cover transition-all duration-500">
+                <!-- Thay đổi object-cover thành h-auto w-full để hiển thị trọn vẹn kích thước ảnh -->
+                <img id="slider-image" src="anhwebsite-resize/bavieco1.webp" alt="Hình ảnh trung tâm" class="w-full h-auto max-h-[600px] object-contain transition-all duration-500 block mx-auto">
                 
                 <!-- Lớp mờ đen hỗ trợ đọc text trên ảnh -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                 
                 <!-- Nút bấm chuyển ảnh Lùi/Tiến -->
-                <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#2D5A27] text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100">
+                <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#2D5A27] text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 z-10">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#2D5A27] text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100">
+                <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#2D5A27] text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 z-10">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
                 
                 <!-- Chú thích ảnh hiển thị động -->
-                <div class="absolute bottom-3 left-4 right-4 text-white text-xs md:text-sm font-semibold drop-shadow" id="slider-caption">
-                    Hình ảnh góc nhìn thiết kế toàn cảnh Trung tâm huấn luyện An ninh phi truyền thống
+                <div class="absolute bottom-3 left-4 right-4 text-white text-xs md:text-sm font-semibold drop-shadow z-10" id="slider-caption">
+                    Ảnh thiết kế toàn cảnh Trung tâm huấn luyện an ninh phi truyền thống
                 </div>
             </div>
             
@@ -58,25 +59,20 @@
             </div>
         </div>
 
-        <!-- NỘI DUNG VĂN BẢN (Được định dạng chuẩn báo chí, dễ đọc) -->
+        <!-- NỘI DUNG VĂN BẢN -->
         <div class="space-y-6 text-sm md:text-base text-gray-800 leading-relaxed text-justify">
-            
             <p>
                 <strong class="text-[#2D5A27]">Trường Quản trị và Kinh doanh (HSB)</strong>, Đại học Quốc gia Hà Nội, là đơn vị giáo dục đại học công lập tiên phong trong tự chủ đại học, có nhiều sáng tạo đột phá trong đào tạo, nghiên cứu và tư vấn chiến lược liên ngành, đã được Tổ chức QS xếp hạng là trường có chất lượng quốc tế 5 sao. Viện An ninh phi truyền thống và MNS-Think Tank trực thuộc trường là một đơn vị đặc biệt chuyên sâu trong nghiên cứu, đào tạo, chuyển giao tri thức khoa học – công nghệ và tư vấn chính sách cho lãnh đạo Đảng, Nhà nước, các bộ ngành, địa phương, tổ chức… về quản trị, an ninh, an ninh phi truyền thống và phát triển bền vững.
             </p>
-            
             <p class="bg-green-50 p-4 border-l-4 border-[#2D5A27] font-medium rounded-r-xl text-gray-900 shadow-sm">
                 Trong bối cảnh các rủi ro, nguy cơ, thách thức an ninh phi truyền thống ngày càng gia tăng, đan xen và tác động trực tiếp đến hoạt động của các cơ quan nhà nước, địa phương, tổ chức, doanh nghiệp và các cộng đồng thì nhu cầu đào tạo, huấn luyện, diễn tập và nâng cao năng lực ứng phó thực tiễn trở nên hết sức cấp thiết. Đặc biệt, các nội dung như kỹ năng sinh tồn, sơ cấp cứu, phòng cháy chữa cháy, cứu nạn cứu hộ, ứng phó thiên tai, bảo vệ mục tiêu, điều khiển thiết bị bay không người lái, an toàn thông tin, an ninh mạng và xử lý tình huống khẩn cấp cần được tổ chức theo mô hình huấn luyện thực hành, mô phỏng và diễn tập liên ngành.
             </p>
-            
             <p>
                 Từ yêu cầu thực tiễn đó, được sự hỗ trợ của HSB và các đối tác chiến lược, Viện An ninh phi truyền thống đang xây dựng <span class="font-bold text-[#2D5A27]">Trung tâm Huấn luyện đa năng với tổng diện tích hơn 10.000 m²</span> (trong không gian sinh thái núi rừng rộng khoảng 100 ha được sử dụng chung của Bavieco), bao gồm các khu chức năng phục vụ huấn luyện thể chất, kỹ năng sinh tồn, thể thao ứng dụng, vượt chướng ngại vật, diễn tập đội nhóm và rèn luyện năng lực ứng phó với các tình huống an ninh phi truyền thống trong thực tiễn.
             </p>
-            
             <p class="border-t border-gray-100 pt-4">
                 Trung tâm được định hướng trở thành không gian huấn luyện thực hành, diễn tập tổng hợp và đào tạo kỹ năng ứng phó với các tình huống an ninh phi truyền thống cho học sinh, sinh viên, học viên, nhân viên doanh nghiệp, lực lượng bảo vệ chuyên chuyên trách, lực lượng cơ sở và các đối tượng có nhu cầu. Đây cũng là mô hình phục vụ nghiên cứu khoa học ứng dụng, thử nghiệm chương trình đào tạo, tổ chức các hoạt động ngoại khóa, huấn luyện kỹ năng sống, kỹ năng sinh tồn, kỹ năng chiến đấu, đào tạo về quản trị rủi ro và nâng cao năng lực thích ứng trước các tình huống khẩn cấp trong thực tế.
             </p>
-            
         </div>
     </main>
 
@@ -88,7 +84,7 @@
 
     <!-- SCRIPT ĐIỀU KHIỂN SLIDE ẢNH -->
     <script>
-        // Danh sách hình ảnh và chú thích ảnh tương ứng
+        // BẠN CÓ THỂ THÊM HOẶC BỚT BAO NHIÊU ẢNH TÙY Ý VÀO MẢNG DƯỚI ĐÂY
         const slideData = [
             {
                 src: "anhwebsite-resize/bavieco1.webp",
@@ -106,16 +102,19 @@
                 src: "anhwebsite-resize/bavieco4.webp",
                 caption: "Toàn cảnh các khu chức năng phục vụ diễn tập tình huống khẩn cấp dã chiến"
             }
+            // Thêm ảnh mới tại đây theo cú pháp:
+            // , { src: "đường_dẫn_ảnh.jpg", caption: "Chú thích ảnh" }
         ];
 
         let currentIndex = 0;
+        let slideInterval;
 
         function updateSlide() {
             const imgElement = document.getElementById('slider-image');
             const captionElement = document.getElementById('slider-caption');
             const counterElement = document.getElementById('slider-counter');
 
-            // Tạo hiệu ứng mờ nhẹ khi chuyển ảnh
+            // Tạo hiệu ứng chuyển cảnh mượt
             imgElement.style.opacity = 0.3;
             
             setTimeout(() => {
@@ -129,15 +128,29 @@
         function nextSlide() {
             currentIndex = (currentIndex + 1) % slideData.length;
             updateSlide();
+            resetInterval();
         }
 
         function prevSlide() {
             currentIndex = (currentIndex - 1 + slideData.length) % slideData.length;
             updateSlide();
+            resetInterval();
         }
 
-        // Tự động chuyển ảnh sau mỗi 5 giây
-        setInterval(nextSlide, 5000);
+        function startInterval() {
+            slideInterval = setInterval(nextSlide, 5000); // Tự động chạy sau mỗi 5 giây
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        // Khởi tạo chạy slide ban đầu và đếm tổng số slide động
+        document.addEventListener("DOMContentLoaded", () => {
+            updateSlide();
+            startInterval();
+        });
     </script>
 </body>
 </html>
