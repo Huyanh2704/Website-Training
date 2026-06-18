@@ -6,9 +6,7 @@
     <title>Trung tâm huấn luyện An ninh phi truyền thống - HSB</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Thư viện hiệu ứng cuộn trang AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Thư viện Slide Chuỗi Swiper.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -16,18 +14,26 @@
             background: linear-gradient(135deg, rgba(45, 90, 39, 0.95) 0%, rgba(30, 61, 26, 0.8) 100%);
             backdrop-filter: blur(4px);
         }
+        
+        /* DYNAMIC CARD ĐÃ ĐƯỢC BỌC CỨNG */
         .dynamic-card {
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            height: 100%;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            overflow: hidden !important;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         .dynamic-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 20px -5px rgba(45, 90, 39, 0.15);
         }
-        /* Custom thanh mờ mũi tên 2 đầu */
+        
         .nav-blur-btn {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             transition: all 0.3s ease;
             width: 40px;
             height: 50px;
@@ -39,20 +45,45 @@
             cursor: pointer;
         }
         .nav-blur-btn:hover {
-            background: rgba(45, 90, 39, 0.85);
+            background: rgba(45, 90, 39, 0.9);
             color: white;
-            width: 45px;
         }
-        /* Vô hiệu hóa nút mặc định của Swiper để tự custom */
         .swiper-button-next::after, .swiper-button-prev::after { display: none; }
+        img { pointer-events: none; user-select: none; -webkit-user-drag: none; }
+
+        /* ======================================================== */
+        /* BIỆN PHÁP "TỐI THƯỢNG": KHÓA CHẾT CÁC SLIDE NGOÀI VÙNG NHÌN */
+        /* ======================================================== */
+        .swiper {
+            width: 100% !important;
+            overflow: hidden !important;
+            padding: 4px 0 !important; /* Tạo khoảng trống nhỏ chống lag shadow */
+        }
+        .swiper-wrapper {
+            box-sizing: border-box !important;
+        }
+        
+        /* 1. Mặc định ẩn tất cả các slide nằm rìa ngoài tầm nhìn */
+        .swiper-slide {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition: opacity 0.3s ease, visibility 0.3s ease !important;
+            box-sizing: border-box !important;
+        }
+        
+        /* 2. Chỉ hiển thị các slide hoàn toàn nằm trong khung được chỉ định */
+        .swiper-slide-visible {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        /* ======================================================== */
     </style>
 </head>
 <body class="bg-[#F4F9F3] text-gray-900 font-sans antialiased overflow-x-hidden">
 
-    <!-- TOP HEADER: LOGO HSB (TRÁI) - CỤM [LOGO INS + HOTLINE] (PHẢI) -->
+    <!-- TOP HEADER -->
     <div class="bg-white border-b border-gray-200 py-2.5 px-4 md:px-6 shadow-sm relative z-50">
         <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
-            <!-- BÊN TRÁI: LOGO HSB -->
             <div class="flex items-center space-x-3 text-center sm:text-left" data-aos="fade-right">
                 <img src="anhwebsite/logoqs.png" alt="Logo HSB" class="h-14 md:h-16 w-auto object-contain">
                 <div>
@@ -60,7 +91,6 @@
                     <h2 class="text-xs md:text-sm font-black text-[#2D5A27] uppercase tracking-tight mt-1">Đại Học Quốc Gia Hà Nội</h2>
                 </div>
             </div>
-            <!-- BÊN PHẢI: LOGO INS ĐẶT CẠNH SÁT HOTLINE -->
             <div class="flex items-center justify-center sm:justify-end gap-4 w-full sm:w-auto" data-aos="fade-left">
                 <div class="flex items-center space-x-2">
                     <img src="anhwebsite/logo_ins.png" alt="Logo Viện An ninh phi truyền thống INS" class="h-11 md:h-14 w-auto object-contain">
@@ -70,7 +100,7 @@
                     </div>
                 </div>
                 <div class="bg-amber-50 border border-amber-200 rounded-xl px-3 py-1.5 flex items-center gap-2.5 shadow-inner">
-                    <div class="bg-amber-500 text-white p-1.5 rounded-lg animate-bounce">
+                    <div class="bg-amber-500 text-white p-1.5 rounded-lg">
                         <i class="fa-solid fa-phone text-xs"></i>
                     </div>
                     <div class="text-left">
@@ -94,7 +124,7 @@
         </div>
     </div>
 
-    <!-- BANNER CHÍNH TÍCH HỢP KHUNG VIDEO YOUTUBE NHÚNG -->
+    <!-- BANNER VIDEO YOUTUBE -->
     <header class="relative bg-gradient-to-r from-[#1E3D1A] to-[#2D5A27] text-white overflow-hidden py-10 px-6 shadow-lg">
         <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-center relative z-10">
             <div class="lg:col-span-5 space-y-3 text-center lg:text-left" data-aos="zoom-in-right">
@@ -124,7 +154,7 @@
     <!-- CONTAINER NỘI DUNG CHÍNH -->
     <div class="max-w-[1400px] mx-auto px-4 md:px-6 py-6 space-y-8">
         
-        <!-- 1. MỤC GIỚI THIỆU CHUNG (AUTOMATIC SEQUENCE CAROUSEL) -->
+        <!-- 1. MỤC GIỚI THIỆU CHUNG -->
         <section id="gioi-thieu" class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm space-y-2 pb-4" data-aos="fade-up">
             <div class="glass-heading text-white px-5 py-3 flex items-center justify-between shadow-sm">
                 <h2 class="text-sm md:text-base font-black uppercase tracking-wider flex items-center gap-2">
@@ -135,28 +165,32 @@
             <div class="relative px-2">
                 <div class="swiper swiper-gioithieu px-10 py-2">
                     <div class="swiper-wrapper">
-                        <!-- Tin số 1 -->
-                        <div class="swiper-slide grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-                            <div class="md:col-span-4 aspect-[16/10] bg-gray-100 rounded-xl overflow-hidden border border-gray-200">
-                                <img src="anhwebsite-resize/bavieco1.webp" alt="Toàn cảnh trung tâm" class="w-full h-full object-cover">
-                            </div>
-                            <div class="md:col-span-8 space-y-3">
-                                <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-justify line-clamp-2">
-                                    Trường Quản trị và Kinh doanh (HSB), Đại học Quốc gia Hà Nội, là đơn vị giáo dục đại học công lập tiên phong trong tự chủ đại học, có nhiều sáng tạo đột phá trong đào tạo, nghiên cứu và tư vấn chiến lược liên ngành quốc gia...
-                                </p>
-                                <a href="gioi-thieu.html" class="inline-flex items-center gap-1.5 bg-[#2D5A27] text-white text-[11px] font-bold uppercase px-4 py-2 rounded-xl shadow hover:bg-[#1E3D1A] transition">Thêm thông tin <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                        <!-- Tin lẻ số 1 -->
+                        <div class="swiper-slide">
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center w-full">
+                                <div class="md:col-span-4 aspect-[16/10] bg-gray-100 rounded-xl overflow-hidden border border-gray-200">
+                                    <img src="anhwebsite-resize/bavieco1.webp" class="w-full h-full object-cover">
+                                </div>
+                                <div class="md:col-span-8 space-y-3">
+                                    <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-justify line-clamp-2">
+                                        Trường Quản trị và Kinh doanh (HSB), Đại học Quốc gia Hà Nội, là đơn vị giáo dục đại học công lập tiên phong trong tự chủ đại học, có nhiều sáng tạo đột phá trong đào tạo, nghiên cứu và tư vấn chiến lược liên ngành quốc gia...
+                                    </p>
+                                    <a href="gioi-thieu.html" class="inline-flex items-center gap-1.5 bg-[#2D5A27] text-white text-[11px] font-bold uppercase px-4 py-2 rounded-xl shadow hover:bg-[#1E3D1A] transition">Thêm thông tin <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                                </div>
                             </div>
                         </div>
-                        <!-- Tin số 2 -->
-                        <div class="swiper-slide grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-                            <div class="md:col-span-4 aspect-[16/10] bg-gray-100 rounded-xl overflow-hidden border border-gray-200">
-                                <img src="anhwebsite/flycam_bavieco1.jpg" alt="Hoạt động nghiên cứu" class="w-full h-full object-cover">
-                            </div>
-                            <div class="md:col-span-8 space-y-3">
-                                <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-justify line-clamp-2">
-                                    Nội dung giới thiệu cập nhật tiếp theo về cơ sở vật chất, hệ thống phòng học mô phỏng hiện đại phục vụ các chuyên đề diễn tập thực hành kỹ năng chỉ huy phòng ngừa khủng hoảng...
-                                </p>
-                                <a href="gioi-thieu-2.html" class="inline-flex items-center gap-1.5 bg-[#2D5A27] text-white text-[11px] font-bold uppercase px-4 py-2 rounded-xl shadow hover:bg-[#1E3D1A] transition">Xem thêm cơ sở vật chất ➔</a>
+                        <!-- Tin lẻ số 2 -->
+                        <div class="swiper-slide">
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center w-full">
+                                <div class="md:col-span-4 aspect-[16/10] bg-gray-100 rounded-xl overflow-hidden border border-gray-200">
+                                    <img src="anhwebsite/flycam_bavieco1.jpg" class="w-full h-full object-cover">
+                                </div>
+                                <div class="md:col-span-8 space-y-3">
+                                    <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-justify line-clamp-2">
+                                        Nội dung giới thiệu cập nhật tiếp theo về cơ sở vật chất, hệ thống phòng học mô phỏng hiện đại phục vụ các chuyên đề diễn tập thực hành kỹ năng chỉ huy phòng ngừa khủng hoảng...
+                                    </p>
+                                    <a href="gioi-thieu-2.html" class="inline-flex items-center gap-1.5 bg-[#2D5A27] text-white text-[11px] font-bold uppercase px-4 py-2 rounded-xl shadow hover:bg-[#1E3D1A] transition">Xem thêm cơ sở vật chất ➔</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,7 +200,7 @@
             </div>
         </section>
 
-        <!-- 2. MỤC CHƯƠNG TRÌNH ĐÀO TẠO HỌC PHẦN (AUTOMATIC SEQUENCE CAROUSEL) -->
+        <!-- 2. MỤC CHƯƠNG TRÌNH ĐÀO TẠO -->
         <section id="chuong-trinh" class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm space-y-2 pb-4" data-aos="fade-up">
             <div class="glass-heading text-white px-5 py-3 flex items-center justify-between shadow-sm">
                 <h2 class="text-sm md:text-base font-black uppercase tracking-wider flex items-center gap-2">
@@ -177,8 +211,8 @@
             <div class="relative px-2">
                 <div class="swiper swiper-chuongtrinh px-10 py-2">
                     <div class="swiper-wrapper">
-                        <!-- Cặp bài học 1 & 2 -->
-                        <div class="swiper-slide grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- Học phần 1 -->
+                        <div class="swiper-slide">
                             <div class="dynamic-card bg-gray-50/50 border border-gray-100 rounded-xl overflow-hidden flex flex-col sm:flex-row group">
                                 <div class="sm:w-5/12 aspect-[4/3] sm:aspect-auto bg-gray-100 overflow-hidden"><img src="anhwebsite/anh_bangbo.jpg" class="w-full h-full object-cover"></div>
                                 <div class="sm:w-7/12 p-4 flex flex-col justify-between space-y-2">
@@ -186,6 +220,9 @@
                                     <a href="#" class="text-[10px] text-[#2D5A27] font-extrabold uppercase">Chi tiết học phần ➔</a>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Học phần 2 -->
+                        <div class="swiper-slide">
                             <div class="dynamic-card bg-gray-50/50 border border-gray-100 rounded-xl overflow-hidden flex flex-col sm:flex-row group">
                                 <div class="sm:w-5/12 aspect-[4/3] sm:aspect-auto bg-gray-100 overflow-hidden"><img src="anhwebsite/anh_cscd.jpg" class="w-full h-full object-cover"></div>
                                 <div class="sm:w-7/12 p-4 flex flex-col justify-between space-y-2">
@@ -194,8 +231,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Cặp bài học 3 & 4 -->
-                        <div class="swiper-slide grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- Học phần 3 -->
+                        <div class="swiper-slide">
                             <div class="dynamic-card bg-gray-50/50 border border-gray-100 rounded-xl overflow-hidden flex flex-col sm:flex-row group">
                                 <div class="sm:w-5/12 aspect-[4/3] sm:aspect-auto bg-gray-100 overflow-hidden"><img src="anhwebsite/anh_bangbo.jpg" class="w-full h-full object-cover"></div>
                                 <div class="sm:w-7/12 p-4 flex flex-col justify-between space-y-2">
@@ -203,6 +240,9 @@
                                     <a href="#" class="text-[10px] text-[#2D5A27] font-extrabold uppercase">Chi tiết học phần ➔</a>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Học phần 4 -->
+                        <div class="swiper-slide">
                             <div class="dynamic-card bg-gray-50/50 border border-gray-100 rounded-xl overflow-hidden flex flex-col sm:flex-row group">
                                 <div class="sm:w-5/12 aspect-[4/3] sm:aspect-auto bg-gray-100 overflow-hidden"><img src="anhwebsite/anh_cscd.jpg" class="w-full h-full object-cover"></div>
                                 <div class="sm:w-7/12 p-4 flex flex-col justify-between space-y-2">
@@ -218,10 +258,8 @@
             </div>
         </section>
 
-        <!-- 3. KHU VỰC SONG SƠNG: TRẠI HÈ HUẤN LUYỆN (AUTOMATIC) & BROCHURE -->
+        <!-- 3. MỤC TRẠI HÈ HUẤN LUYỆN & BROCHURE -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
-            
-            <!-- KHỐI TRÁI: TRẠI HÈ HUẤN LUYỆN KỸ NĂNG (AUTOMATIC SLIDE) -->
             <section id="trai-he" class="lg:col-span-8 bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between pb-4" data-aos="fade-right">
                 <div class="space-y-2">
                     <div class="glass-heading text-white px-5 py-3 flex items-center justify-between shadow-sm">
@@ -233,22 +271,26 @@
                     <div class="relative px-2">
                         <div class="swiper swiper-traihe px-10 py-1">
                             <div class="swiper-wrapper">
-                                <!-- Tin Trại Hè 1 -->
-                                <div class="swiper-slide grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-                                    <div class="sm:col-span-4 aspect-[16/11] bg-gray-100 rounded-xl overflow-hidden border border-gray-200"><img src="anhwebsite/traihe_banner.jpg" class="w-full h-full object-cover"></div>
-                                    <div class="sm:col-span-8 space-y-1.5">
-                                        <span class="inline-block text-[9px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full uppercase">Mùa 1 - Ba Vì</span>
-                                        <h4 class="font-bold text-sm text-gray-900 uppercase">Mùa hè trưởng thành từ thiên nhiên Ba Vì</h4>
-                                        <p class="text-[11px] text-gray-500 text-justify line-clamp-2">Huấn luyện dã ngoại biệt lập cho lứa tuổi từ 6 đến 15 tuổi tại tổ hợp Bavieco Ba Vì, tối ưu tính tự lập nề nếp kỷ luật quân đội.</p>
+                                <!-- Trại Hè 1 -->
+                                <div class="swiper-slide">
+                                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center w-full">
+                                        <div class="sm:col-span-4 aspect-[16/11] bg-gray-100 rounded-xl overflow-hidden border border-gray-200"><img src="anhwebsite/traihe_banner.jpg" class="w-full h-full object-cover"></div>
+                                        <div class="sm:col-span-8 space-y-1.5">
+                                            <span class="inline-block text-[9px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full uppercase">Mùa 1 - Ba Vì</span>
+                                            <h4 class="font-bold text-sm text-gray-900 uppercase">Mùa hè trưởng thành từ thiên nhiên Ba Vì</h4>
+                                            <p class="text-[11px] text-gray-500 text-justify line-clamp-2">Huấn luyện dã ngoại biệt lập cho lứa tuổi từ 6 đến 15 tuổi tại tổ hợp Bavieco Ba Vì, tối ưu tính tự lập nề nếp kỷ luật quân đội.</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- Tin Trại Hè 2 -->
-                                <div class="swiper-slide grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-                                    <div class="sm:col-span-4 aspect-[16/11] bg-gray-100 rounded-xl overflow-hidden border border-gray-200"><img src="anhwebsite/traihe_banner.jpg" class="w-full h-full object-cover"></div>
-                                    <div class="sm:col-span-8 space-y-1.5">
-                                        <span class="inline-block text-[9px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full uppercase">Mùa 2 - Kỹ năng sinh tồn biển</span>
-                                        <h4 class="font-bold text-sm text-gray-900 uppercase">Hành trình chiến binh nhí chinh phục đại dương</h4>
-                                        <p class="text-[11px] text-gray-500 text-justify line-clamp-2">Khóa huấn luyện kỹ năng sinh tồn trên biển, xử lý đuối nước và phát tín hiệu cứu nạn khẩn cấp vô cùng quan trọng.</p>
+                                <!-- Trại Hè 2 -->
+                                <div class="swiper-slide">
+                                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center w-full">
+                                        <div class="sm:col-span-4 aspect-[16/11] bg-gray-100 rounded-xl overflow-hidden border border-gray-200"><img src="anhwebsite/traihe_banner.jpg" class="w-full h-full object-cover"></div>
+                                        <div class="sm:col-span-8 space-y-1.5">
+                                            <span class="inline-block text-[9px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full uppercase">Mùa 2 - Kỹ năng sinh tồn biển</span>
+                                            <h4 class="font-bold text-sm text-gray-900 uppercase">Hành trình chiến binh nhí chinh phục đại dương</h4>
+                                            <p class="text-[11px] text-gray-500 text-justify line-clamp-2">Khóa huấn luyện kỹ năng sinh tồn trên biển, xử lý đuối nước và phát tín hiệu cứu nạn khẩn cấp vô cùng quan trọng.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -262,7 +304,7 @@
                 </div>
             </section>
 
-            <!-- KHỐI PHẢI: TÀI LIỆU ĐÍNH KÈM BROCHURE (CỐ ĐỊNH) -->
+            <!-- KHỐI BROCHURE -->
             <section class="lg:col-span-4 bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between pb-4" data-aos="fade-left">
                 <div class="space-y-3">
                     <div class="glass-heading text-white px-5 py-3 shadow-sm">
@@ -281,7 +323,7 @@
             </section>
         </div>
 
-        <!-- 4. MỤC TIN TỨC HOẠT ĐỘNG MỚI NHẤT (AUTOMATIC SEQUENCE CAROUSEL) -->
+        <!-- 4. MỤC TIN TỨC HOẠT ĐỘNG -->
         <section id="tin-tuc" class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm space-y-2 pb-5" data-aos="fade-up">
             <div class="glass-heading text-white px-5 py-3 flex items-center justify-between shadow-sm">
                 <h2 class="text-sm md:text-base font-black uppercase tracking-wider flex items-center gap-2">
@@ -292,8 +334,8 @@
             <div class="relative px-2">
                 <div class="swiper swiper-tintuc px-10 py-2">
                     <div class="swiper-wrapper">
-                        <!-- Cặp tin tức 1 & 2 -->
-                        <div class="swiper-slide grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- Tin tức 1 -->
+                        <div class="swiper-slide">
                             <div class="dynamic-card bg-gray-50/50 border border-gray-100 rounded-xl overflow-hidden flex flex-col sm:flex-row group">
                                 <div class="sm:w-4/12 aspect-[16/10] sm:aspect-auto bg-gray-100 overflow-hidden"><img src="anhwebsite/sinhvien_cscd.jpg" class="w-full h-full object-cover"></div>
                                 <div class="sm:w-8/12 p-3.5 flex flex-col justify-between space-y-2">
@@ -301,6 +343,9 @@
                                     <a href="tin-tuc-sinh-vien.html" class="inline-block text-[10px] bg-gray-800 text-white font-bold uppercase px-3 py-1.5 rounded-lg hover:bg-black transition self-start shadow-sm">Đọc bài ➔</a>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Tin tức 2 -->
+                        <div class="swiper-slide">
                             <div class="dynamic-card bg-gray-50/50 border border-gray-100 rounded-xl overflow-hidden flex flex-col sm:flex-row group">
                                 <div class="sm:w-4/12 aspect-[16/10] sm:aspect-auto bg-gray-100 overflow-hidden"><img src="anhwebsite/traihe_khaimac1.jpg" class="w-full h-full object-cover"></div>
                                 <div class="sm:w-8/12 p-3.5 flex flex-col justify-between space-y-2">
@@ -309,8 +354,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Cặp tin tức 3 & 4 -->
-                        <div class="swiper-slide grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- Tin tức 3 -->
+                        <div class="swiper-slide">
                             <div class="dynamic-card bg-gray-50/50 border border-gray-100 rounded-xl overflow-hidden flex flex-col sm:flex-row group">
                                 <div class="sm:w-4/12 aspect-[16/10] sm:aspect-auto bg-gray-100 overflow-hidden"><img src="anhwebsite/sinhvien_cscd.jpg" class="w-full h-full object-cover"></div>
                                 <div class="sm:w-8/12 p-3.5 flex flex-col justify-between space-y-2">
@@ -318,6 +363,9 @@
                                     <a href="#" class="inline-block text-[10px] bg-gray-800 text-white font-bold uppercase px-3 py-1.5 rounded-lg hover:bg-black transition self-start shadow-sm">Đọc bài ➔</a>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Tin tức 4 -->
+                        <div class="swiper-slide">
                             <div class="dynamic-card bg-gray-50/50 border border-gray-100 rounded-xl overflow-hidden flex flex-col sm:flex-row group">
                                 <div class="sm:w-4/12 aspect-[16/10] sm:aspect-auto bg-gray-100 overflow-hidden"><img src="anhwebsite/traihe_khaimac1.jpg" class="w-full h-full object-cover"></div>
                                 <div class="sm:w-8/12 p-3.5 flex flex-col justify-between space-y-2">
@@ -335,7 +383,7 @@
 
     </div>
 
-    <!-- FOOTER ĐỒNG BỘ -->
+    <!-- FOOTER -->
     <footer class="bg-[#1E3D1A] text-gray-300 text-[11px] py-6 border-t-4 border-[#2D5A27]">
         <div class="max-w-[1400px] mx-auto px-6 text-center space-y-1">
             <p class="font-bold text-[#E2F0D9] text-xs uppercase tracking-wide">Trung tâm Huấn luyện An ninh phi truyền thống</p>
@@ -344,52 +392,52 @@
         </div>
     </footer>
 
-    <!-- Khởi chạy Script hiệu ứng -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Kích hoạt AOS cuộn trang
         AOS.init({ duration: 800, once: true });
 
-        // Cấu hình Slide Chuỗi TỰ ĐỘNG CHẠY (Autoplay) cho từng phần bằng Swiper.js
-        const swiperGT = new Swiper('.swiper-gioithieu', {
+        // Cấu hình các Swiper với thuộc tính watchSlidesProgress cốt lõi
+        new Swiper('.swiper-gioithieu', {
             loop: true,
-            autoplay: {
-                delay: 4000, // Tự động chuyển slide sau mỗi 4 giây (4000ms)
-                disableOnInteraction: false, // Giữ tự động chạy tiếp sau khi người dùng click/vuốt tin
-                pauseOnMouseEnter: true // Tạm dừng chuyển động khi di chuột vào đọc tin
-            },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            watchSlidesProgress: true, // Kích hoạt bắt tọa độ ẩn/hiện chuẩn xác
+            autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
             navigation: { nextEl: '.swiper-next-gt', prevEl: '.swiper-prev-gt' },
         });
 
-        const swiperCT = new Swiper('.swiper-chuongtrinh', {
+        new Swiper('.swiper-traihe', {
             loop: true,
-            autoplay: {
-                delay: 4500, // 4.5 giây
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true
-            },
-            navigation: { nextEl: '.swiper-next-ct', prevEl: '.swiper-prev-ct' },
-        });
-
-        const swiperTH = new Swiper('.swiper-traihe', {
-            loop: true,
-            autoplay: {
-                delay: 5000, // 5 giây
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true
-            },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            watchSlidesProgress: true,
+            autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
             navigation: { nextEl: '.swiper-next-th', prevEl: '.swiper-prev-th' },
         });
 
-        const swiperTT = new Swiper('.swiper-tintuc', {
+        new Swiper('.swiper-chuongtrinh', {
             loop: true,
-            autoplay: {
-                delay: 4200, // 4.2 giây
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true
-            },
+            watchSlidesProgress: true, // BẮT BUỘC: để CSS class ".swiper-slide-visible" hoạt động
+            roundLengths: true,
+            autoplay: { delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true },
+            navigation: { nextEl: '.swiper-next-ct', prevEl: '.swiper-prev-ct' },
+            breakpoints: {
+                320: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 2, spaceBetween: 24 }
+            }
+        });
+
+        new Swiper('.swiper-tintuc', {
+            loop: true,
+            watchSlidesProgress: true, // BẮT BUỘC: loại bỏ hoàn toàn việc thòi chữ rìa slide kế cận
+            roundLengths: true,
+            autoplay: { delay: 4200, disableOnInteraction: false, pauseOnMouseEnter: true },
             navigation: { nextEl: '.swiper-next-tt', prevEl: '.swiper-prev-tt' },
+            breakpoints: {
+                320: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 2, spaceBetween: 24 }
+            }
         });
     </script>
 </body>
