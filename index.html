@@ -144,7 +144,8 @@
             <div class="lg:col-span-7 w-full" data-aos="zoom-in-left">
                 <div class="bg-black/20 p-1.5 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-sm">
                     <div class="rounded-xl overflow-hidden relative aspect-video bg-gray-900 shadow-inner">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/ĐIỀN_MÃ_VIDEO_YOUTUBE_VÀO_ĐÂY?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <!-- YOUTUBE AUTOPLAY & LOOP LINK EMBED -->
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/I_LagqIO_b8?si=mnmEzyZs5uyy53iX&autoplay=1&mute=1&playlist=I_LagqIO_b8&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -318,7 +319,8 @@
                     </div>
                 </div>
                 <div class="pt-3 border-t border-gray-100 px-5">
-                    <a href="tailieu/brochure.pdf" download class="w-full text-center bg-red-700 text-white font-bold py-2 px-3 rounded-xl text-[11px] hover:bg-red-800 transition shadow-md flex items-center justify-center gap-1.5"><i class="fa-solid fa-cloud-arrow-down"></i> Tải Brochure (.PDF)</a>
+                    <!-- LINK GOOGLE DRIVE - MỞ TAB MỚI, KHÔNG TỰ ĐỘNG DOWNLOAD -->
+                    <a href="https://drive.google.com/file/d/1La2Q4QgA7zKK8_1KphNbAiGNKrmiIpww/view?usp=sharing" target="_blank" class="w-full text-center bg-red-700 text-white font-bold py-2 px-3 rounded-xl text-[11px] hover:bg-red-800 transition shadow-md flex items-center justify-center gap-1.5"><i class="fa-solid fa-eye"></i> Xem Brochure (.PDF)</a>
                 </div>
             </section>
         </div>
@@ -402,7 +404,7 @@
             loop: true,
             slidesPerView: 1,
             spaceBetween: 30,
-            watchSlidesProgress: true, // Kích hoạt bắt tọa độ ẩn/hiện chuẩn xác
+            watchSlidesProgress: true,
             autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
             navigation: { nextEl: '.swiper-next-gt', prevEl: '.swiper-prev-gt' },
         });
@@ -418,7 +420,7 @@
 
         new Swiper('.swiper-chuongtrinh', {
             loop: true,
-            watchSlidesProgress: true, // BẮT BUỘC: để CSS class ".swiper-slide-visible" hoạt động
+            watchSlidesProgress: true,
             roundLengths: true,
             autoplay: { delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true },
             navigation: { nextEl: '.swiper-next-ct', prevEl: '.swiper-prev-ct' },
@@ -430,7 +432,7 @@
 
         new Swiper('.swiper-tintuc', {
             loop: true,
-            watchSlidesProgress: true, // BẮT BUỘC: loại bỏ hoàn toàn việc thòi chữ rìa slide kế cận
+            watchSlidesProgress: true,
             roundLengths: true,
             autoplay: { delay: 4200, disableOnInteraction: false, pauseOnMouseEnter: true },
             navigation: { nextEl: '.swiper-next-tt', prevEl: '.swiper-prev-tt' },
